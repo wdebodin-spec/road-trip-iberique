@@ -1,0 +1,2307 @@
+<!doctype html><html><head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"capabilities":{"assets":"assets.hcOK0ALv.js","comments":"comments.BKZ3qutA.js","db":"db.C8ehi_0m.js","downloads":"downloads.BXsoAvg9.js","mcp":"mcp.CYSdpjo0.js","permissions":"permissions.DdITF2Mk.js","sample":"sample.DpdXn9di.js","self":"self.BN4be5De.js","user":"user.Cr_h1ETf.js"},"transforms":"_transforms.VaITkagF.js","comments":"_comments.CNSvmFji.js","translate":"_translate.BOzFH2D9.js"}</script><script>(function(){"use strict";var ne=["light","dark","system"];function oe(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function W(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function se(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const n=t.theme;return typeof n=="string"&&ne.includes(n)}function ie(e){try{typeof reportError=="function"?reportError(e):setTimeout(()=>{throw e},0)}catch{}}var Y=Object.freeze(Object.assign(Object.create(null),{user:Object.freeze(Object.assign(Object.create(null),{id:null,isOwner:!1,canEdit:!1,name:null,avatarUrl:null,email:null}))})),ae={sample:"sample"};function x(){const e=new Uint8Array(20);try{crypto.getRandomValues(e)}catch{for(let n=0;n<e.length;n++)e[n]=Math.floor(Math.random()*256)}let t="";for(const n of e)t+=(n%36).toString(36);return t}function le(e,t){const n=r=>{const o={path:r},s=r.split("/");return{id:s[s.length-1],path:r,get:()=>t("get",[o]),set:g=>t("set",[o,g]),update:g=>t("update",[o,g]),delete:()=>t("delete",[o]),acquire:g=>t("acquire",[o,g]),onSnapshot:(g,y)=>t("subscribe",[o,g,y]),collection:g=>a(r+"/"+String(g))}},c=r=>({where:(o,s,g)=>c({...r,where:[...r.where??[],{f:String(o),op:String(s),v:g}]}),orderBy:(o,s)=>c({...r,orderBy:{f:String(o),dir:s===void 0?"asc":String(s)}}),limit:o=>c({...r,limit:Number(o)}),get:()=>t("query",[r]),onSnapshot:(o,s)=>t("subscribe",[r,o,s])}),a=r=>({...c({collection:r}),path:r,doc:o=>n(r+"/"+(o===void 0?x():String(o))),add:o=>{const s=n(r+"/"+x());return Promise.resolve(s.set(o)).then(()=>s)}});e.doc=r=>n(String(r)),e.collection=r=>a(String(r))}var ce=Object.freeze([]);function ue(e,t){let n=null,c=null;const a=()=>e.__settled;e.peers=()=>ce,e.connected=()=>!1,e.emit=()=>a()?.()??Promise.resolve(),e.presence=r=>{const o=a();if(o)return o();let s=null;if(r!==null&&typeof r=="object")try{Array.isArray(r)||(s={...r})}catch{}return s===null?Promise.reject({code:"invalid_argument",message:"presence takes an object"}):(n===null&&(n=Object.create(null),c=Promise.resolve(t("presence",[n]))),Object.assign(n,s),c)}}function J(e){if(window===top||e.type==="auxclick"&&e.button!==1)return;const t=e.composedPath?e.composedPath():[e.target];let n=null;for(let o=0;o<t.length;o++){const s=t[o];if(s&&s.matches&&s.matches("a[href],area[href]")){n=s;break}}if(!n&&e.target&&e.target.closest&&(n=e.target.closest("a[href],area[href]")),!n)return;const c=n.getAttribute("href");if(!c)return;let a,r;try{a=new URL(c,document.baseURI),r=new URL(document.baseURI).origin}catch{return}if((a.protocol==="http:"||a.protocol==="https:")&&a.origin!==r){e.preventDefault();const o=(n.getAttribute("target")??document.querySelector("base[target]")?.getAttribute("target")??"").toLowerCase(),s=e.type==="auxclick"||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||!["","_self","_top","_parent"].includes(o);parent.postMessage({__frame_nav:!0,url:a.href,newTab:s},"*")}}var G={};function D(e){if(window===top)return;const t=Date.now();t-(G[e]||0)<500||(G[e]=t,parent.postMessage({__frame_engaged:!0,kind:e},"*"))}var fe=2e3,V=["wheel","touchstart","touchmove","keydown","pointerdown"],X=0;function de(e){e.isTrusted&&(X=Date.now())}function me(){addEventListener("click",J,!0),addEventListener("auxclick",J,!0)}function pe(){for(let e=0;e<V.length;e++)addEventListener(V[e],de,{capture:!0,passive:!0});addEventListener("scroll",e=>{e.isTrusted&&Date.now()-X<fe&&D("scroll")},{capture:!0,passive:!0}),addEventListener("pointermove",e=>{e.isTrusted&&D("pointer")},{capture:!0,passive:!0}),addEventListener("click",e=>{e.isTrusted&&D("click")},{capture:!0,passive:!0})}var I="__frame_scroll",ge=150,he=310,ve=160,_e=3e4;function ye(){let e=0,t=!1,n=!1,c=!1,a=0,r=null;const o=d=>{try{sessionStorage.setItem(I,JSON.stringify({y:d}))}catch{}},s=()=>{if(clearTimeout(e),r===null)return;const d=r;r=null,o(d)},g=()=>{if(t){t=!1;return}n=!0,r=scrollY,clearTimeout(e),e=setTimeout(s,ge)};try{addEventListener("scroll",g,{passive:!0}),addEventListener("pagehide",s)}catch{}const y=()=>{let d;try{d=sessionStorage.getItem(I)}catch{return null}if(d===null)return null;let u;try{u=JSON.parse(d)}catch{u=null}const p=u?.y;if(!(typeof p=="number"&&Number.isFinite(p)&&p>=0)){try{sessionStorage.removeItem(I)}catch{}return null}return p};let l=!1;const f=d=>{try{const u=scrollY;scrollTo({top:d,left:0,behavior:"instant"}),a=d,c=!0,clearTimeout(e),r=null,o(d);const p=scrollY;p!==u&&(t=!0),p!==d&&!l&&(l=!0,addEventListener("load",()=>{try{if(scrollY===p){const _=y();f(_!==null?_:a)}}catch{}},{once:!0}))}catch{}},m=()=>{try{return!!location.hash}catch{return!0}};let h=!1;const v=()=>{try{if(h||innerWidth>he||innerHeight>ve)return;h=!0;const d=Date.now(),u=()=>{try{removeEventListener("resize",u)}catch{}if(Date.now()-d>_e||n||m())return;const p=y();f(p!==null?p:a)};addEventListener("resize",u)}catch{}};let w=!1,S=!1;return{restore(){if(w||(w=!0,m()))return;const d=y();d!==null&&(f(d),v())},promoted(){if(S||(S=!0,m()))return;const d=y();d!==null?(f(d),v()):c&&f(a)}}}function be(e,t,n){const c=[...t.values()].filter(a=>a.targets.some(r=>r.startsWith(e+".")));return{wrap(a,r){const o=`${e}.${a}`,s=c.filter(g=>g.targets.includes(o));return s.length===0?(...g)=>{try{return r(...g)}catch(y){return Promise.reject(y)}}:(...g)=>{let y=g;for(const f of s){const m=f.module.parameters;if(m)try{y=m(y)}catch{return Promise.reject({code:"transform_error",id:f.id,scope:e,message:"parameters transform failed"})}}let l;try{l=r(...y)}catch(f){l=Promise.reject(f)}return l.then(f=>{for(let m=s.length-1;m>=0;m--){const h=s[m],v=h.module.returns;if(v)try{f=v(f)}catch{return n({id:h.id,scope:e,leg:"returns"}),f}}return f},f=>{for(let m=s.length-1;m>=0;m--){const h=s[m],v=h.module.throws;if(v)try{f=v(f)}catch{return n({id:h.id,scope:e,leg:"throws"}),Promise.reject(f)}}return Promise.reject(f)})}}}}function Ee(e,t,n,c=()=>{}){const a=new Set(e.changes??[]),r=new Map;for(const o of a){const s=t[o];s&&r.set(o,s)}return{contract:e.contract,changes:a,flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:r,shellOrigin:n.shellOrigin,mount:n.mount,pipe:o=>be(o,r,c)}}var Re="modulepreload",Me=function(e){return"/"+e},Le={},we=function(t,n,c){let a=Promise.resolve();function r(o){const s=new Event("vite:preloadError",{cancelable:!0});if(s.payload=o,window.dispatchEvent(s),!s.defaultPrevented)throw o}return a.then(o=>{for(const s of o||[])s.status==="rejected"&&r(s.reason);return t().catch(r)})};(function(){const e=Object.defineProperty,t=globalThis,n=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let c=0;for(let a=0;a<n.length;a++){const r=n[a];try{e(t,r,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[r]}catch{}try{e(t,r,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[r]=="function"&&c++}if(c&&window!==top)try{parent.postMessage({__frame_rtc_lockdown_failed:c},"*")}catch{}})();var Se=1e4,Ae=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function Q(e){for(const t of Ae)if(t.endsWith(":*"))try{const n=new URL(e);if(`${n.protocol}//${n.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var k=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),q=window.__FRAME_PREAMBLE?.transforms,z=window.__FRAME_PREAMBLE?.comments,B=window.__FRAME_PREAMBLE?.translate,C=/^[\w.-]+\.js$/,Oe=/^[a-z][a-z0-9_-]{0,63}$/,Z=null,R=null;function $(e,t,n){try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var F=!1;function ee(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,F=!0):F&&(delete t.dataset.theme,t.style.colorScheme="",F=!1)}var te=256,M=Object.assign(Object.create(null),{mcp:Object.assign(Object.create(null),{watchTool:{handlerArg:3}}),db:Object.assign(Object.create(null),{subscribe:{handlerArg:1,errArg:2}}),live:Object.assign(Object.create(null),{on:{handlerArg:1,errArg:2},onPeers:{handlerArg:0,errArg:1},onConnection:{handlerArg:0,errArg:1}})}),je=Object.assign(Object.create(null),{db:(e,t)=>le(e,t),live:(e,t,n)=>ue(e,n)}),L=new Map;function re(e,t){const n=L.get(e);if(!n)return;const c=Object.assign(Object.create(null),t);Object.assign(n.impl,c),n.impl.__settled=()=>Promise.reject({code:"capability_removed",message:`${e}: method not in this runtime`});const a=n.queue;n.queue=[];for(const r of a){const o=c[r.method];if(o)if(M[e]?.[r.method])try{r.resolve(o(...r.args))}catch{T(r,M[e][r.method],{code:"transform_error",message:`${e}.${r.method} rejected its arguments`})}else o(...r.args).then(r.resolve,r.reject);else{const s={code:"capability_removed",message:`${e}.${r.method} is not in this runtime`},g=M[e]?.[r.method];if(g){T(r,g,s);continue}r.reject(s)}}}function Pe(e,t){const n=L.get(e);if(!n)return;n.impl.__settled=()=>Promise.reject(t);const c=n.queue;n.queue=[];for(const a of c){const r=M[e]?.[a.method];if(r){T(a,r,t);continue}a.reject(t)}}function N(e,t){const n=Y[e];if(!n){Pe(e,t);return}re(e,Object.fromEntries(Object.entries(n).map(([c,a])=>[c,()=>Promise.resolve(a)])))}function T(e,t,n){if(e.syncState?.dead)return;const c=t.errArg===void 0?void 0:e.args[t.errArg],a=t.errArg===void 0?e.args[t.handlerArg]:c;typeof a=="function"&&queueMicrotask(()=>{if(!e.syncState?.dead)try{a(t.errArg===void 0?{type:"error",error:n}:n)}catch(r){ie(r)}})}var H=Object.getOwnPropertyDescriptor(window,"claude");if(window!==top&&!(H&&H.writable===!1)){me(),pe();let e=null;try{e=ye()}catch{}const t=H?.value??{};$(window,"claude",t);const n=l=>{const f={impl:Object.create(null),queue:[]};L.set(l,f);const m=f.impl,h=d=>({code:"queue_overflow",message:`${l}.${d}: pre-init call queue is full`}),v=(d,u)=>{if(f.queue.length>=te){const p=Y[l];return p&&d in p?Promise.resolve(p[d]):Promise.reject(h(d))}return new Promise((p,_)=>{f.queue.push({method:d,args:u,resolve:p,reject:_})})},w=ae[l],S=new Proxy(w===void 0?m:(()=>{}),{apply:(d,u,p)=>{const _=w,E=m[_]??m.__settled;return E?E(...p):v(_,p)},get:(d,u)=>{if(typeof u!="string"||u==="then"||u==="toJSON"||u==="valueOf")return;if(u==="toString")return Object.prototype.toString;if(w!==void 0&&(u==="call"||u==="apply"||u==="bind"))return Function.prototype[u];const p=M[l]?.[u];return p?(..._)=>{if(typeof _[p.handlerArg]!="function")throw new TypeError(`${l}.${u} requires a handler function`);const E=m[u];if(E)return E(..._);if(m.__settled){const b={dead:!1},U={args:[..._],syncState:b};return m.__settled().catch(i=>T(U,p,i)),()=>{b.dead=!0}}if(f.queue.length>=te){const b={dead:!1};return T({args:[..._],syncState:b},p,h(u)),()=>{b.dead=!0}}let A=null;const j={dead:!1};return f.queue.push({method:u,args:_,resolve:b=>{A=typeof b=="function"?b:null,j.dead&&A?.()},reject:()=>{},syncState:j}),()=>{j.dead=!0,A?.()}}:(..._)=>{const E=m[u]??m.__settled;return E?E(..._):v(u,_)}},set:()=>!1});je[l]?.(m,(d,u)=>S[d](...u),v),$(t,l,S)};for(const l of Object.keys(k)){if(t[l]!==void 0){$(t,l,t[l]);continue}n(l)}let c=null,a=null,r=0;const o=l=>{l.source!==parent||!Q(l.origin)||oe(l.data)&&(c=l.data.__frame_init,R=l.origin,removeEventListener("message",o),clearTimeout(r),a?.())};addEventListener("message",o),parent.postMessage({__frame_connect:!0},"*");const s=new Promise(l=>{a=l,r=setTimeout(()=>{removeEventListener("message",o),l()},Se)}),g=document.readyState==="loading"?new Promise(l=>document.addEventListener("DOMContentLoaded",()=>l(),{once:!0})):Promise.resolve();g.then(()=>{try{e?.restore()}catch{}});const y=l=>{if(!(l.source!==parent||!Q(l.origin))&&W(l.data)){removeEventListener("message",y);try{e?.promoted()}catch{}}};addEventListener("message",y),s.then(async()=>{if(!c||!R){for(const i of L.keys())N(i,{code:"not_granted",message:"frame initialization did not arrive - capability unavailable"});return}ee(c.theme);const l=R;let f=!1,m=!1;addEventListener("message",i=>{if(i.source!==parent||i.origin!==l)return;se(i.data)&&ee(i.data.__frame_theme.theme);const O=i.data?.__fc_mode;O&&typeof O=="object"&&!f&&z&&C.test(z)&&(f=!0,h(z).then(K=>K.install?.(l,O.on===!0)).catch(()=>{}));const P=i.data?.__ft_cmd;P&&typeof P=="object"&&!m&&B&&C.test(B)&&(m=!0,h(B).then(K=>K.install?.(l,P)).catch(()=>{}))});const h=i=>we(()=>import("/_runtime/"+i),void 0),v=Object.keys(c.capabilities??{});for(const i of v)Object.hasOwn(k,i)||Oe.test(i)&&t[i]===void 0&&(n(i),N(i,{code:"capability_disabled",message:"capability not in this runtime generation"}));const w=v.filter(i=>Object.hasOwn(k,i)).map(i=>[i,k[i]]).filter(i=>typeof i[1]=="string"&&C.test(i[1])),[S,...d]=await Promise.allSettled([q&&C.test(q)?h(q):Promise.resolve({}),...w.map(([,i])=>h(i))]),u=R;Z=Ee(c,S.status==="fulfilled"&&S.value?.TRANSFORMS||{},{shellOrigin:u,mount:re},i=>parent.postMessage({__frame_cap_telemetry:i},u));const p=i=>parent.postMessage({__frame_cap_telemetry:{kind:"cap-load-error",cap:i}},u),_=Z;d.forEach((i,O)=>{const P=w[O][0];if(i.status!=="fulfilled"){p(P);return}try{i.value?.install?.(_)}catch{p(P)}});for(const[i,O]of L)if(O.impl.__settled===void 0){if(v.includes(i)){N(i,{code:"capability_disabled",message:"capability not available in this session"});continue}N(i,{code:"not_granted",message:"capability not available in this session"})}await g,parent.postMessage({__frame_ready:!0},R);let E=-1,A=0;const j=()=>{A=0;const i=Math.max(document.documentElement.scrollHeight,document.body?document.body.scrollHeight:0);i!==E&&(E=i,parent.postMessage({__frame_size:!0,h:i},u))},b=()=>{A||(A=setTimeout(j,200))},U=new ResizeObserver(b);U.observe(document.documentElement),document.body&&U.observe(document.body),document.addEventListener("load",b,!0),document.fonts?.ready.then(b,()=>{}),addEventListener("beforeprint",()=>{E=-1,j()}),b(),addEventListener("message",i=>{if(!(i.source!==parent||i.origin!==u)&&W(i.data)){try{e?.promoted()}catch{}E=-1,b()}})})}})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Road Trip Ibérique — Programme & billets</title>
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto !important; }
+  }
+
+  html{ scroll-behavior: smooth; }
+
+  :root{
+    --paper: #E8E2D0;
+    --paper-deep: #DED5BC;
+    --card: #F3EFE2;
+    --ink: #1E2438;
+    --ink-soft: #3A4258;
+    --slate: #5B6472;
+    --blue: #24499A;
+    --red: #AE4432;
+    --brass: #A8792E;
+    --moss: #5C7A52;
+    --rule: rgba(30,36,56,0.14);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  body{
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: 16.5px;
+    line-height: 1.55;
+    padding: 36px 20px 80px;
+  }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* ---- masthead ---- */
+  header.masthead{
+    text-align: center;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .kicker{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+  h1.title{
+    font-family: "American Typewriter", Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(30px, 6vw, 42px);
+    margin: 8px 0 6px;
+    text-wrap: balance;
+  }
+  .subtitle{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+  }
+
+  .route{
+    max-width: 560px;
+    margin: 20px auto 0;
+  }
+  .route-labels{
+    display: flex;
+    justify-content: space-between;
+    font-family: "American Typewriter", Georgia, serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .route-track{
+    position: relative;
+    height: 2px;
+    background: var(--rule);
+    margin: 9px 0 7px;
+  }
+  .route-fill{
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 0%;
+    background: var(--blue);
+  }
+  .route-caption{
+    text-align: center;
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 11px;
+    color: var(--slate);
+  }
+
+  /* ---- sticky sub-navigation ---- */
+  .subnav{
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: 10px 0;
+  }
+  .subnav-inner{
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .subnav-inner::-webkit-scrollbar{ display: none; }
+  .subnav a{
+    flex: none;
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 6px 11px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    white-space: nowrap;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .subnav a:hover{ background: var(--card); border-color: var(--slate); }
+  .subnav a:focus-visible{ outline: 2px solid var(--blue); outline-offset: 2px; }
+
+  /* ---- section headings ---- */
+  h2.section-title{
+    font-family: "American Typewriter", Georgia, serif;
+    font-size: 20px;
+    margin: 46px 0 4px;
+    letter-spacing: 0.01em;
+    scroll-margin-top: 60px;
+  }
+  h3.leg-sub{
+    font-family: "American Typewriter", Georgia, serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin: 22px 0 10px;
+  }
+  p.section-note{
+    margin: 0 0 18px;
+    color: var(--ink-soft);
+    max-width: 60ch;
+    font-size: 15px;
+  }
+
+  /* ---- ticket status board ---- */
+  .board{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .ticket{
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 13px 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 6px 14px;
+  }
+  .ticket-name{
+    font-weight: 600;
+    font-size: 15.5px;
+  }
+  .ticket-meta{
+    grid-column: 1;
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--slate);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.65;
+  }
+  .ticket-meta b{ color: var(--ink-soft); font-weight: 600; }
+  .res-link{
+    display: inline-block;
+    margin-top: 5px;
+    color: var(--blue);
+    font-size: 11px;
+    text-decoration: none;
+    opacity: 0.85;
+  }
+  .res-link:hover{ opacity: 1; text-decoration: underline; }
+  .pill{
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .pill.ok{ background: rgba(92,122,82,0.16); color: var(--moss); }
+  .pill.todo{ background: rgba(168,121,46,0.18); color: var(--brass); }
+  .pill.decide{ background: rgba(174,68,50,0.14); color: var(--red); }
+  .pill.off{ background: rgba(91,100,114,0.14); color: var(--slate); }
+
+  /* ---- alert box ---- */
+  .alert{
+    background: rgba(174,68,50,0.07);
+    border: 1px solid rgba(174,68,50,0.35);
+    border-radius: 3px;
+    padding: 16px 18px;
+    margin-top: 26px;
+  }
+  .alert-title{
+    font-family: "American Typewriter", Georgia, serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--red);
+    margin: 0 0 10px;
+  }
+  .alert ul{
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .alert li{
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .alert li b{ color: var(--ink); }
+  .alert-dismiss{
+    flex: none;
+    width: 22px;
+    height: 22px;
+    margin-top: 1px;
+    border-radius: 50%;
+    border: 1px solid rgba(174,68,50,0.4);
+    background: transparent;
+    color: var(--red);
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 11px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .alert-dismiss:hover{ background: rgba(174,68,50,0.14); }
+  .alert-dismiss:focus-visible{ outline: 2px solid var(--red); outline-offset: 2px; }
+
+  /* ---- itinerary legs ---- */
+  .leg{
+    margin-top: 40px;
+    padding-top: 4px;
+    scroll-margin-top: 60px;
+  }
+  .leg-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+  }
+  .leg-city{
+    font-family: "American Typewriter", Georgia, serif;
+    font-weight: 700;
+    font-size: 21px;
+  }
+  .leg-dates{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--slate);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .day{
+    display: grid;
+    grid-template-columns: 78px 1fr;
+    gap: 2px 14px;
+    padding: 12px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .day:first-of-type{ border-top: none; }
+  .day-date{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--blue);
+    font-weight: 600;
+    padding-top: 2px;
+  }
+  /* ---- kit du jour ---- */
+  .kit-jour{ display:flex; gap:6px; flex-wrap:wrap; padding:2px 0 12px; grid-column:2; }
+  .kit-badge{ font-size:10.5px; font-family:"SF Mono",Menlo,ui-monospace,monospace; border-radius:3px; padding:2px 7px; letter-spacing:0.01em; white-space:nowrap; }
+  .kit-badge.car-hotel{ background:rgba(0,0,0,0.05); color:var(--ink-soft); }
+  .kit-badge.car-route{ background:rgba(70,100,160,0.12); color:var(--blue); font-weight:700; }
+  .kit-badge.oui{ background:rgba(74,119,75,0.13); color:var(--moss); font-weight:600; }
+  .kit-badge.non{ background:rgba(0,0,0,0.03); color:var(--ink-soft); opacity:0.38; text-decoration:line-through; }
+  .day-items{ grid-column:2; }
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .day-items li.activity{
+    display: grid;
+    grid-template-columns: 46px 20px 1fr;
+    gap: 3px 10px;
+    align-items: start;
+  }
+  .day-items li.activity.logistics{
+    grid-template-columns: 46px 1fr;
+  }
+  .activity-time{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--blue);
+    padding-top: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .logistics .activity-time{ color: var(--slate); font-weight: 600; }
+  .activity-icon{
+    width: 18px;
+    height: 18px;
+    color: var(--slate);
+    padding-top: 1px;
+  }
+  .activity-icon svg{ width: 100%; height: 100%; display: block; }
+  .activity-title{
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .logistics .activity-title{ font-weight: 500; color: var(--ink-soft); font-size: 14px; }
+  .duration{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--slate);
+  }
+  .choice-card-title .duration{ display: block; font-size: 11px; margin-top: 2px; }
+  .activity-desc{
+    margin: 3px 0 0;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    max-width: 54ch;
+    line-height: 1.5;
+  }
+  .activity-desc .kid-tip{
+    color: var(--brass);
+    font-weight: 600;
+  }
+  .activity-desc .travel-note{
+    display: block;
+    margin-top: 4px;
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 11.5px;
+    color: var(--slate);
+    font-style: normal;
+  }
+  .tag{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 999px;
+  }
+  .tag.ok{ background: rgba(92,122,82,0.16); color: var(--moss); }
+  .tag.todo{ background: rgba(168,121,46,0.18); color: var(--brass); }
+  .tag.decide{ background: rgba(174,68,50,0.14); color: var(--red); }
+  .tag.opt{ background: rgba(91,100,114,0.14); color: var(--slate); }
+  .tag.propose{ background: transparent; color: var(--slate); border: 1px dashed var(--slate); }
+  .tag.validated{ background: rgba(92,122,82,0.16); color: var(--moss); }
+
+  /* ---- choice comparison (pick one) ---- */
+  .activity-choice{
+    display: block;
+    padding: 12px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .day-items li.activity-choice:first-child{ border-top: none; }
+  .choice-header{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .choice-time{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--blue);
+  }
+  .choice-label{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+  }
+  .choice-options{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .choice-card{
+    background: var(--card);
+    border: 1.5px dashed var(--brass);
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+  .choice-card-title{
+    font-family: "American Typewriter", Georgia, serif;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .choice-card .travel-note{ display: block; margin: 2px 0 7px; }
+  .choice-card-desc{
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .choice-or{
+    align-self: center;
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+  @media (max-width: 480px){
+    .choice-options{ grid-template-columns: 1fr; }
+    .choice-or{ text-align: center; padding: 2px 0; }
+  }
+
+  /* ---- travel timeline (embedded per leg) ---- */
+  .trip-leg{
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 4px 18px;
+    padding: 10px 0 16px;
+  }
+  .trip-time{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .trip-label{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-top: 2px;
+  }
+  .trip-time-depart, .trip-time-arrive{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .trip-car-icon{
+    flex: none;
+    width: 15px;
+    height: 15px;
+    color: var(--blue);
+    vertical-align: -3px;
+    margin-right: 6px;
+  }
+  .trip-line{
+    width: 2px;
+    flex: 1;
+    min-height: 22px;
+    background: var(--blue);
+    margin: 3px 0;
+  }
+  .trip-pause{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 9px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--brass);
+    background: var(--card);
+    padding: 2px 6px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .trip-route{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+  .trip-detail{
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-top: 3px;
+    max-width: 56ch;
+  }
+  .trip-checkin{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 5px;
+  }
+  .trip-checkin.match{ color: var(--moss); }
+
+  /* ---- heat warning ---- */
+  .heat-warning{
+    background: rgba(168,121,46,0.08);
+    border: 1px solid rgba(168,121,46,0.35);
+    border-radius: 3px;
+    padding: 14px 16px;
+    margin: 16px 0;
+  }
+  .heat-warning-title{
+    font-family: "American Typewriter", Georgia, serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--brass);
+    margin: 0 0 6px;
+  }
+  .heat-warning p{
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .heat-warning-sub{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 600;
+    margin: 10px 0 6px !important;
+  }
+  .heat-warning ul{
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .heat-warning li{
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+
+  /* ---- spécialités locales ---- */
+  .specialites{
+    background: rgba(92,122,82,0.07);
+    border: 1px solid rgba(92,122,82,0.3);
+    border-radius: 3px;
+    padding: 14px 16px;
+    margin: 16px 0;
+  }
+  .specialites-title{
+    font-family: "American Typewriter", Georgia, serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--moss);
+    margin: 0 0 8px;
+  }
+  .specialites ul{
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .specialites li{
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+  .specialites li b{ color: var(--ink); }
+  .specialites-kid{ color: var(--brass); font-weight: 600; }
+
+  /* ---- shelved items ---- */
+  .shelved{
+    border: 1px dashed var(--rule);
+    border-radius: 3px;
+    padding: 13px 16px;
+  }
+  .shelved-name{
+    font-weight: 600;
+    font-size: 15.5px;
+    color: var(--ink-soft);
+  }
+  .shelved-date{
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: var(--slate);
+    margin: 3px 0 8px;
+    text-transform: uppercase;
+  }
+  .shelved p{
+    margin: 0;
+    font-size: 14px;
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+
+  footer.note{
+    margin-top: 50px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-family: "SF Mono", Menlo, ui-monospace, monospace;
+    font-size: 11px;
+    color: var(--slate);
+    text-align: center;
+  }
+
+  /* ---- back to top ---- */
+  #back-to-top{
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--rule);
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    box-shadow: 0 2px 10px rgba(30,36,56,0.28);
+    z-index: 50;
+  }
+  #back-to-top.visible{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  #back-to-top:hover{ background: var(--ink-soft); }
+  #back-to-top:focus-visible{ outline: 2px solid var(--blue); outline-offset: 3px; }
+</style>
+
+<style>
+  #pwd-gate{position:fixed;inset:0;z-index:9999;background:var(--paper);display:flex;align-items:center;justify-content:center;padding:20px;}
+  #pwd-box{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:36px 32px;max-width:340px;width:100%;text-align:center;}
+  #pwd-box h2{font-family:"American Typewriter",Georgia,serif;font-size:22px;margin:0 0 6px;}
+  #pwd-box p{font-size:14px;color:var(--ink-soft);margin:0 0 22px;}
+  #pwd-input{width:100%;padding:10px 14px;font-size:16px;border:1px solid var(--rule);border-radius:4px;background:var(--paper);color:var(--ink);font-family:inherit;box-sizing:border-box;}
+  #pwd-input:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  #pwd-btn{margin-top:12px;width:100%;padding:11px;background:var(--ink);color:var(--paper);font-family:"SF Mono",Menlo,ui-monospace,monospace;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;}
+  #pwd-btn:hover{background:var(--ink-soft);}
+  #pwd-err{margin-top:10px;font-size:13px;color:var(--red);display:none;}
+</style>
+
+<div id="pwd-gate">
+  <div id="pwd-box">
+    <h2>Road Trip Ibérique</h2>
+    <p>Entrez le mot de passe pour accéder au programme.</p>
+    <input id="pwd-input" type="password" placeholder="Mot de passe" autocomplete="current-password" />
+    <button id="pwd-btn">Entrer</button>
+    <div id="pwd-err">Mot de passe incorrect.</div>
+  </div>
+</div>
+
+<div id="main-content" style="display:none">
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Cap sur Lisbonne · feuille de route</div>
+    <h1 class="title">Road Trip Ibérique</h1>
+    <div class="subtitle">Port Grimaud → Barcelone → Valence → Séville → Cadix → Alvor → Albufeira → Lisbonne</div>
+
+    <div class="route">
+      <div class="route-labels"><span>Port Grimaud</span><span>Lisbonne</span></div>
+      <div class="route-track">
+        <div class="route-fill" style="width:0%"></div>
+      </div>
+      <div class="route-caption">17 AOÛT → 31 AOÛT</div>
+    </div>
+  </header>
+
+  <nav class="subnav" aria-label="Navigation rapide">
+    <div class="subnav-inner">
+      <a href="#checklist">À trancher</a>
+      <a href="#billets">Billets</a>
+      <a href="#barcelone">Barcelone</a>
+      <a href="#valence">Valence</a>
+      <a href="#seville">Séville</a>
+      <a href="#cadix">Cadix</a>
+      <a href="#alvor">Alvor</a>
+      <a href="#albufeira">Albufeira</a>
+      <a href="#lisbonne">Lisbonne</a>
+      <a href="#ecarte">Écarté</a>
+    </div>
+  </nav>
+
+  <div class="alert">
+    <p class="alert-title">✓ Points à jour</p>
+    <ul>
+      <li data-alert-id="cosmo-caixa-retour">
+        <span><b>Cosmo Caixa est de retour au programme</b> — casé le 17 août à 15h30, après le repos à l'hôtel.</span>
+        <button class="alert-dismiss" data-dismiss="cosmo-caixa-retour" aria-label="Marquer comme vu, ne plus afficher">✕</button>
+      </li>
+      <li data-alert-id="plage-barcelone-choix">
+        <button class="alert-dismiss" data-dismiss="plage-barcelone-choix" aria-label="Marquer comme vu, ne plus afficher">✕</button>
+      </li>
+      <li data-alert-id="albufeira-non-reserve">
+        <span><b>Albufeira (28→31 août) : toujours rien de réservé</b> — volontairement, l'option de remonter plus au nord reste ouverte (Vila Nova de Milfontes est aussi envisagée pour ces dates, 4 personnes).</span>
+        <button class="alert-dismiss" data-dismiss="albufeira-non-reserve" aria-label="Marquer comme vu, ne plus afficher">✕</button>
+      </li>
+    </ul>
+  </div>
+
+  <h2 class="section-title" id="checklist">Reste à trancher — check-list avant le départ</h2>
+  <p class="section-note">Toutes les décisions encore ouvertes, regroupées ici pour ne rien oublier avant le 17 août.</p>
+
+  <div class="board">
+
+    <div class="ticket">
+      <div class="ticket-name">5 restaurants à valider</div>
+      <div class="pill decide">À valider</div>
+      <div class="ticket-meta">Can Solé (Barcelone), La Pepica (Valence), Bodega Santa Cruz (Séville), Freiduría Las Flores (Cadix), O Sueste (Alvor) — repérés par recherche, aucun encore confirmé par vous deux. Badge « à valider » sur chacun dans le programme.</div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">Logement Albufeira (ou plus au nord ?)</div>
+      <div class="pill decide">À choisir</div>
+      <div class="ticket-meta">28 → 31 août, rien de réservé — Albufeira ou Vila Nova de Milfontes, 4 personnes.</div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">Slide & Splash</div>
+      <div class="pill decide">À trancher</div>
+      <div class="ticket-meta">Vérifier les tailles/âges minimums des toboggans avant de le remettre au programme (actuellement dans « Écarté du programme »).</div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">Billets urgents — tous réservés</div>
+      <div class="pill ok">✓ Fait</div>
+      <div class="ticket-meta">Flamenco, Oceanogràfic, Alcázar &amp; Cathédrale — tous pris. Seul le <b>Cosmo Caixa</b> reste (non-urgent, achetable sur place le 17 août).</div>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="billets">Billets — où on en est</h2>
+  <p class="section-note">Ce qui est déjà pris, et ce qu'il reste à réserver ou trancher avant d'y être.</p>
+
+  <div class="board">
+    <div class="ticket">
+      <div class="ticket-name">Parc Güell</div>
+      <div class="pill ok">Réservé</div>
+      <div class="ticket-meta"><b>18 août, 10h30</b> · 4 billets · localisateur 700907931073<br><a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzQhVNbtJWlkZHTvmDCNzXtWfKMS" target="_blank" class="res-link">→ Email de confirmation (billets en pièce jointe)</a></div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">Sagrada Família</div>
+      <div class="pill ok">Réservé</div>
+      <div class="ticket-meta"><b>18 août, 13h15</b> · 4 billets (2 enfants + 2 adultes) · localisateur 102752639 · 52 € · penser à télécharger l'app officielle Sagrada Família avant d'arriver<br><a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzQhVNbtJVfGgmwtGvxvMGbhxcQf" target="_blank" class="res-link">→ Email de confirmation + PDF billets</a></div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">Flamenco — Tablao Las Setas</div>
+      <div class="pill ok">Réservé</div>
+      <div class="ticket-meta"><b>23 août, 18h</b> · Réservation <b>T1263-260813-60</b> · 2 admissions générales + Cléophée + Othilie gratuite · <b>96€ payés</b> · annulation gratuite jusqu'à 24h avant<br><a href="https://app.turitop.com/pdf/download/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUzMTUwMjQ3IiwiaWRfY29tcGFueSI6IjIwOTk2IiwidGVtcGxhdGUiOiJjb25maXJtIiwidXNlcklkZW50aXR5IjpbXSwiaWF0IjoxNzg2NjI4NzI0LCJleHAiOjE4MTkwMjg3MjR9.zYP0WyIehP2oGcLSEzjD9umzbxTaMsYTsgiigW1P_kQ" target="_blank" class="res-link">→ Billet PDF Las Setas</a></div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">Oceanogràfic</div>
+      <div class="pill ok">Réservé</div>
+      <div class="ticket-meta"><b>21 août</b> · aquarium de Valence · billet journalier · Réf. <b>5076032706685958407</b> · 118,05€ (2 adultes + Cléophée, Othilie gratuite) · PDF : entradas_5076032706685958407.pdf (mail William)</div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">Alcázar &amp; Cathédrale de Séville</div>
+      <div class="pill ok">Réservé</div>
+      <div class="ticket-meta"><b>24 août, matin</b><br>🏰 <b>Alcázar</b> · Réf. <b>24581383</b> · <a href="https://consiguetusentradas.tenemosplan.com/?clave=06f3facff38e0cb13b61ccd29af69df94999af53a1b938d92ed94fe2d117d47203e87" target="_blank" class="res-link">→ Télécharger les billets</a> · mail William (entradas@notificacionesinfoticketing.com)<br>⛪ <b>Cathédrale</b> · Réf. <b>261CFQVD4J</b> · Voucher_HLZARP7U.pdf · mail William (entradas@servitickets.es)</div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">Cosmo Caixa</div>
+      <div class="pill off">Sur place</div>
+      <div class="ticket-meta"><b>17 août, 15h30</b> · entrée générale rarement complète — achetable directement à la caisse le jour J, après le repos à l'hôtel</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Le programme, jour par jour</h2>
+  <p class="section-note">Trajet pour arriver, logement, puis activités — étape par étape.</p>
+
+  <div class="leg" id="barcelone">
+    <div class="leg-head">
+      <div class="leg-city">Barcelone</div>
+      <div class="leg-dates">17 → 19 août</div>
+    </div>
+
+    <div class="trip-leg">
+      <div class="trip-time">
+        <div class="trip-label">Départ</div>
+        <div class="trip-time-depart">04h00</div>
+        <div class="trip-line"></div>
+        <div class="trip-pause">pause 1h</div>
+        <div class="trip-line"></div>
+        <div class="trip-label">Arrivée</div>
+        <div class="trip-time-arrive">10h45</div>
+      </div>
+      <div>
+        <div class="trip-route"><svg class="trip-car-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 6.3 6.8A1.6 1.6 0 0 1 7.8 5.6h8.4a1.6 1.6 0 0 1 1.5 1.2L19 11"/><rect x="3" y="11" width="18" height="5.5" rx="1.4"/><circle cx="7.5" cy="18.3" r="1.5" fill="currentColor"/><circle cx="16.5" cy="18.3" r="1.5" fill="currentColor"/></svg>Port Grimaud → Barcelone</div>
+        <div class="trip-detail">5h45 de route + 1h de pause · départ très tôt exprès, c'est le plus long trajet du séjour — penser à alterner qui conduit pendant la pause</div>
+        <div class="trip-checkin match">Chambre dispo à 14h00 — arrivée avec 3h15 d'avance, mais consigne à bagages en réception confirmée</div>
+      </div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">Eurohotel Diagonal Port</div>
+      <div class="pill ok">Réservé</div>
+      <div class="ticket-meta">
+        <b>Arrivée</b> lun 17 août, à partir de 14h00<br>
+        <b>Départ</b> mer 19 août, jusqu'à 12h00 · 2 nuits, Chambre Familiale · 539,16 €<br>
+        Lope de Vega 4, Sant Martí, 08005 Barcelone · +34 932 30 20 00<br>
+        Confirmation 5813476414 / code 0771 · annulation gratuite jusqu'au 13 août 23:59<br>
+        Consigne à bagages en réception disponible avant le check-in — pratique vu l'avance à l'arrivée<br>
+        <a href="https://secure.booking.com/confirmation.fr.html?auth_key=kwVdQknnhoUo8kGI" target="_blank" class="res-link">→ Gérer sur Booking.com</a>
+      </div>
+    </div>
+
+    <div class="specialites">
+      <p class="specialites-title">🍽 Spécialités barcelonaises</p>
+      <ul>
+        <li><b>Pa amb tomàquet</b> — pain frotté à la tomate crue et à l'huile d'olive. Base absolue de tout repas catalan, servi automatiquement avec à peu près tout.</li>
+        <li><b>Crema catalana</b> — l'originale, avec sa croûte caramélisée au chalumeau. Précède la crème brûlée française.</li>
+        <li><b>Vermut</b> — vermouth servi à l'apéro avec olives, chips et anchois. Rituel dominical très ancré, surtout dans les vieux quartiers (Barceloneta, Poble Sec).</li>
+        <li><b>La Boqueria</b> — le grand marché couvert de la Rambla, à faire tôt le matin avant que ça soit bondé. Fruits, jus pressés, jamón. <span class="specialites-kid">Jus de fruits frais pressés devant vous — les filles vont demander à en reprendre.</span></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-date">17 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-hotel">🚗 À l'hôtel</span>
+        <span class="kit-badge oui">🛴 Promenade bord de mer (A/R)</span>
+        <span class="kit-badge oui">🚼 CosmoCaixa (sorties séparées)</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">11h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Dépôt des bagages à l'hôtel</div>
+          <p class="activity-desc">Consigne en réception, avant l'heure officielle du check-in.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">11h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 8 9h2.5L7 15h3v6h4v-6h3l-3.5-6H17z" fill="currentColor" stroke="none"/></svg></div>
+        <div>
+          <div class="activity-title">Balade — Parc Diagonal Mar + Rambla del Poblenou <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">Dégourdir les jambes après la route — le <b>Parc de Diagonal Mar</b> est à 5 min à pied de l'hôtel (jets d'eau, pelouses, jeux pour enfants). <span class="kid-tip">Les filles peuvent courir librement avant de repartir.</span> Continuer vers la <b>Rambla del Poblenou</b>, boulevard piéton animé du quartier, pour finir dans un café en terrasse.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">13h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Déjeuner <span class="duration">(1h)</span></div>
+          <p class="activity-desc">Terrasse sur la Rambla del Poblenou — <b>pa amb tomàquet</b> + bocadillo dans un bar du quartier. Simple et rapide avant de récupérer la chambre.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">14h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Check-in hôtel</div>
+          <p class="activity-desc">Installation dans la chambre, Eurohotel Diagonal Port.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">14h15</div>
+        <div class="activity-title">Repos à l'hôtel <span class="duration">(1h15)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">15h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5 21V10M19 21V10M9 21v-6h6v6M3 10l9-6 9 6"/></svg></div>
+        <div>
+          <div class="activity-title">Cosmo Caixa <span class="duration">(2h)</span></div>
+          <p class="activity-desc">Musée des sciences interactif, forêt tropicale grandeur nature reconstituée à l'intérieur — parfait en début d'après-midi, bien climatisé, après le repos. <span class="kid-tip">La forêt tropicale avec de vrais arbres et animaux fascine les filles.</span> <span class="travel-note">🧭 ~20-25 min en Uber/taxi depuis l'hôtel.</span> <span class="kid-tip">🎟️ Billets sur place le jour même, pas besoin de réserver — Adultes : 8€/pers · Cléophée &amp; Othilie : <b>gratuit</b> (moins de 16 ans). Total : ~16€ pour vous deux.</span> <span class="travel-note">💡 Déplaçable au 19 matin (jour de départ vers Valence) si vous êtes trop crevés à l'arrivée.</span></p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">17h30</div>
+        <div class="activity-title">Taxi Cosmo Caixa → Barceloneta <span class="duration">(~25 min)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">18h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="6" r="2.3"/><path d="M3 15c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/><path d="M3 19.5c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/></svg></div>
+        <div>
+          <div class="activity-title">Plage de la Barceloneta <span class="duration">(1h)</span></div>
+          <p class="activity-desc">La plage historique de Barcelone — bain ou balade en bord de mer en fin de journée, avant le dîner à Can Solé à deux pas. Quartier de pêcheurs plein de vie, chiringuitos, animation. <span class="travel-note">🧭 ~25 min en taxi depuis Cosmo Caixa.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">19h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Dîner <span class="duration">(1h30)</span></div>
+          <p class="activity-desc"><b>Can Solé</b> <span class="tag propose">à valider</span> (paella, fruits de mer catalans) — institution familiale de Barceloneta, depuis plus d'un siècle.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">21h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Retour à l'hôtel</div>
+        </div>
+      </li>
+      </ul>
+    </div>
+    <div class="day">
+      <div class="day-date">18 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-hotel">🚗 À l'hôtel</span>
+        <span class="kit-badge non">🛴 Non (pentes + foule)</span>
+        <span class="kit-badge oui">🚼 Oui</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">8h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Petit-déjeuner <span class="duration">(30 min)</span></div>
+          <p class="activity-desc">Bar du quartier — <b>pa amb tomàquet</b> grillé + café amb llet. Le petit-déjeuner catalan par défaut : rapide, servi automatiquement dans n'importe quel bar, 3-4€ par personne.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">9h00</div>
+        <div class="activity-title">Temps libre <span class="duration">(1h30)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">10h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 8 9h2.5L7 15h3v6h4v-6h3l-3.5-6H17z" fill="currentColor" stroke="none"/></svg></div>
+        <div>
+          <div class="activity-title">Parc Güell <span class="duration">(1h30)</span> <span class="tag ok">réservé</span></div>
+          <p class="activity-desc">Le parc fantasque de Gaudí — mosaïques colorées, colonnades et vue sur toute la ville depuis la terrasse ondulée. <span class="kid-tip">À repérer : le petit dragon en mosaïque (« El Drac ») sur l'escalier d'entrée, l'un des symboles les plus photographiés de Barcelone.</span> <span class="travel-note">🧭 Pas à pied depuis l'hôtel — ~30 min en métro + bus, ou ~20-25 min en Uber/taxi.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">12h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Déjeuner <span class="duration">(1h)</span></div>
+          <p class="activity-desc">Bar à tapas de l'Eixample (plein de choix à 5 min de la Sagrada) — <b>pa amb tomàquet</b>, croquetes, patatas bravas. Option dessert : <b>crema catalana</b>.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">13h15</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5 21V10M19 21V10M9 21v-6h6v6M3 10l9-6 9 6"/></svg></div>
+        <div>
+          <div class="activity-title">Sagrada Família <span class="duration">(1h30)</span> <span class="tag ok">réservé</span></div>
+          <p class="activity-desc">La basilique inachevée de Gaudí — forêt de colonnes à l'intérieur, vitraux qui inondent l'église de couleur. Penser à l'appli officielle pour l'audioguide. <span class="kid-tip">Vers midi, la lumière traverse les vitraux et baigne le chœur d'une lueur dorée — un joli moment à guetter avec les filles.</span> <span class="travel-note">🧭 Depuis Parc Güell : ~20-25 min en métro, ~15 min en Uber/taxi.</span></p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">14h45</div>
+        <div class="activity-title">Temps libre <span class="duration">(1h45)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">16h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5 21V10M19 21V10M9 21v-6h6v6M3 10l9-6 9 6"/></svg></div>
+        <div>
+          <div class="activity-title">Casa Batlló et Casa Milà <span class="duration">(45 min)</span></div>
+          <p class="activity-desc">Deux façades signature de Gaudí sur le Passeig de Gràcia, à admirer depuis la rue — balcons en forme de masques, toit ondulé façon dragon. <span class="kid-tip">Le toit ondulé serait le dos d'un dragon vaincu par Saint Georges — les filles peuvent chercher l'épée plantée dedans (la petite tourelle à croix).</span> <span class="travel-note">🧭 Depuis la Sagrada Família : ~15 min en métro (ligne directe), ~10-12 min en Uber/taxi.</span></p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">17h15</div>
+        <div class="activity-title">Temps libre <span class="duration">(1h45)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">19h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Dîner <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">Cervecería ou bar à tapas dans l'Eixample — l'heure du <b>vermut</b> (vermouth catalan, servi avec olives et anchois) avant de passer aux tapas. Le quartier en est plein entre le Passeig de Gràcia et l'hôtel.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">21h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Retour à l'hôtel</div>
+        </div>
+      </li>
+      </ul>
+    </div>
+    <div class="day">
+      <div class="day-date">19 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-route">🚗 En route → Valence (départ 12h30)</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">8h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Petit-déjeuner <span class="duration">(30 min)</span></div>
+          <p class="activity-desc">Café rapide + <b>pa amb tomàquet</b> au bar — journée de départ, garder du temps pour le Parc de la Ciutadella avant la route.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">9h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 8 9h2.5L7 15h3v6h4v-6h3l-3.5-6H17z" fill="currentColor" stroke="none"/></svg></div>
+        <div>
+          <div class="activity-title">Parc de la Ciutadella <span class="duration">(1h)</span></div>
+          <p class="activity-desc">Grand parc central avec une cascade monumentale et un lac à barques — bonne dernière balade avant de reprendre la route. <span class="kid-tip">Un mammouth de pierre grandeur nature se cache près de l'entrée du zoo, dans le parc — facile à repérer et toujours un succès auprès des enfants.</span> <span class="travel-note">🧭 Depuis l'hôtel : ~25-30 min à pied, ~12-15 min en métro ou Uber/taxi.</span></p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">10h30</div>
+        <div class="activity-title">Temps libre <span class="duration">(1h)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">11h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Check-out hôtel <span style="color:var(--moss);font-size:12.5px;font-weight:600;">(limite : 12h00)</span></div>
+          <p class="activity-desc">Restitution de la chambre, récupération des bagages en consigne.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">11h45</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Déjeuner <span class="duration">(30 min)</span></div>
+          <p class="activity-desc">Bocadillo ou montadito dans un bar du Born ou de la Barceloneta — rapide, à emporter si besoin. Dernier <b>pa amb tomàquet</b> avant l'Espagne non-catalane.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">12h30</div>
+        <div class="activity-title">Départ vers Valence</div>
+      </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="leg" id="valence">
+    <div class="leg-head">
+      <div class="leg-city">Valence</div>
+      <div class="leg-dates">19 → 22 août</div>
+    </div>
+
+    <div class="trip-leg">
+      <div class="trip-time">
+        <div class="trip-label">Départ</div>
+        <div class="trip-time-depart">12h30</div>
+        <div class="trip-line"></div>
+        <div class="trip-label">Arrivée</div>
+        <div class="trip-time-arrive">16h00</div>
+      </div>
+      <div>
+        <div class="trip-route"><svg class="trip-car-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 6.3 6.8A1.6 1.6 0 0 1 7.8 5.6h8.4a1.6 1.6 0 0 1 1.5 1.2L19 11"/><rect x="3" y="11" width="18" height="5.5" rx="1.4"/><circle cx="7.5" cy="18.3" r="1.5" fill="currentColor"/><circle cx="16.5" cy="18.3" r="1.5" fill="currentColor"/></svg>Barcelone → Valence</div>
+        <div class="trip-detail">3h30 de route, sans pause · départ après le check-out (12h00)</div>
+        <div class="trip-checkin match">Chambre dispo à 16h00 — pile à l'heure</div>
+      </div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">Palau Suites &amp; Apartments</div>
+      <div class="pill ok">Réservé</div>
+      <div class="ticket-meta">
+        <b>Arrivée</b> mer 19 août, 16h00 – 23h30<br>
+        <b>Départ</b> sam 22 août, 03h00 – 12h00 · 3 nuits, Studio · 449,55 €<br>
+        Carrer de l'Antiga Senda d'En Senent 4, El Pla del Real, 46023 Valence<br>
+        Confirmation 5341721192 / code 5828 · annulation gratuite jusqu'au 11 août 23:59<br>
+        <a href="https://secure.booking.com/confirmation.fr.html?auth_key=UCTkymjwdc9Dzf8q" target="_blank" class="res-link">→ Gérer sur Booking.com</a>
+      </div>
+    </div>
+
+    <div class="specialites">
+      <p class="specialites-title">🍽 Spécialités valenciennes</p>
+      <ul>
+        <li><b>Paella valenciana</b> — c'est ici qu'elle a été inventée. La vraie version est au poulet, lapin et haricots — pas aux fruits de mer. La Pepica est déjà au programme le 19.</li>
+        <li><b>Horchata de chufa + fartons</b> — boisson froide et sucrée au lait de souchet, servie avec de longues brioches moelleuses à tremper dedans. Purement valencienne, introuvable sous cette forme ailleurs en Espagne. <span class="specialites-kid">Un moment à faire absolument avec les filles — les brioches trempées dans la horchata, c'est leur truc.</span></li>
+        <li><b>Fideuà</b> — variante de la paella où le riz est remplacé par de fins vermicelles, souvent aux fruits de mer. Moins connue que la paella, plus surprenante.</li>
+        <li><b>Agua de Valencia</b> — cocktail maison des adultes : jus d'orange frais + cava + vodka. Difficile de repartir de Valence sans en avoir pris un.</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-date">19 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-hotel">🚗 À l'hôtel</span>
+        <span class="kit-badge non">🛴 Non (arrivée)</span>
+        <span class="kit-badge oui">🚼 Oui</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">16h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Check-in hôtel</div>
+          <p class="activity-desc">Installation dans le studio, Palau Suites & Apartments.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">16h15</div>
+        <div class="activity-title">Temps libre <span class="duration">(1h15)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">17h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="6" r="2.3"/><path d="M3 15c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/><path d="M3 19.5c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/></svg></div>
+        <div>
+          <div class="activity-title">Playa de la Malvarrosa <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">La plage de la ville, large promenade bordée de restaurants à paella — bon premier bain après la route. <span class="travel-note">🧭 Depuis l'hôtel : pas vraiment à pied (~35-40 min), métro direct ~15-20 min, Uber/taxi ~10 min.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">19h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Dîner <span class="duration">(1h30)</span></div>
+          <p class="activity-desc"><b>La Pepica</b> <span class="tag propose">à valider</span> (paella valenciana, fruits de mer) — institution centenaire face à la plage, a même reçu la famille royale d'Espagne.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">21h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Retour à l'hôtel</div>
+        </div>
+      </li>
+      </ul>
+    </div>
+    <div class="day">
+      <div class="day-date">20 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-hotel">🚗 À l'hôtel</span>
+        <span class="kit-badge oui">🛴 Turia + Gulliver le matin (A/R hôtel)</span>
+        <span class="kit-badge oui">🚼 Bioparc l'après-midi</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">9h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Petit-déjeuner <span class="duration">(30 min)</span></div>
+          <p class="activity-desc"><b>Horchatería</b> — horchata fraîche + fartons à tremper dedans. C'est LE petit-déjeuner valencien. <span class="kid-tip">Les filles peuvent tremper leurs fartons dans l'horchata — elles ne voudront plus boire autre chose de la journée.</span> Horchatería de Santa Catalina (historique, centre-ville) ou El Siglo, ~15 min à pied.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">9h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M4.5 20v-7l3-2 3 2v7M13 20v-8l3.5-3 3.5 3v8"/></svg></div>
+        <div>
+          <div class="activity-title">Mercado Central <span class="duration">(30 min)</span></div>
+          <p class="activity-desc">Un des plus beaux marchés Art Nouveau d'Europe — immense verrière colorée, étals de fruits, herbes, oranges de Valence. Ferme à 15h00 : à voir le matin. <span class="kid-tip">Les filles peuvent choisir un fruit ou une pâtisserie à grignoter en chemin.</span> <span class="travel-note">🧭 2 min à pied de l'horchatería de Santa Catalina.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">10h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5 21V10M19 21V10M9 21v-6h6v6M3 10l9-6 9 6"/></svg></div>
+        <div>
+          <div class="activity-title">Lonja de la Seda <span class="duration">(20 min)</span></div>
+          <p class="activity-desc">Ancienne Bourse de la soie gothique, classée UNESCO — colonnes torsadées et plafond en étoile impressionnants. Juste en face du Mercado.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">10h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 8 9h2.5L7 15h3v6h4v-6h3l-3.5-6H17z" fill="currentColor" stroke="none"/></svg></div>
+        <div>
+          <div class="activity-title">Jardin del Turia <span class="duration">(45 min)</span></div>
+          <p class="activity-desc">Ancien lit du fleuve transformé en un parc de 9 km à travers la ville — pistes, aires de jeux, beaucoup d'ombre. <span class="travel-note">🧭 Juste à côté de l'hôtel — moins de 5 min à pied.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">11h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 8 9h2.5L7 15h3v6h4v-6h3l-3.5-6H17z" fill="currentColor" stroke="none"/></svg></div>
+        <div>
+          <div class="activity-title">Parque Gulliver <span class="duration">(1h)</span></div>
+          <p class="activity-desc">Immense sculpture de Gulliver allongé, entièrement transformée en aire de jeux — toboggans cachés dans ses vêtements et ses cheveux, mini-golf, jeu d'échecs géant. Entrée gratuite. <span class="kid-tip">Un des moments forts du séjour pour les filles — à ne surtout pas presser.</span> <span class="travel-note">🧭 Le long du Jardin del Turia depuis l'hôtel — environ 15-20 min à pied, ou 5 min en Uber/taxi.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">12h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M4.5 20v-7l3-2 3 2v7M13 20v-8l3.5-3 3.5 3v8"/></svg></div>
+        <div>
+          <div class="activity-title">Plaza de la Virgen <span class="duration">(30 min)</span></div>
+          <p class="activity-desc">Cœur historique de Valence, grande fontaine. La <b>Cathédrale de Valence</b> est juste à côté — son trésor expose ce qui serait le <b>Saint Graal</b> (entrée flash 20-30 min). <span class="travel-note">🧭 Depuis l'hôtel : environ 15 min à pied.</span></p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">13h00</div>
+        <div class="activity-title">Temps libre <span class="duration">(1h)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">14h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Déjeuner <span class="duration">(1h)</span></div>
+          <p class="activity-desc">Tapas ou bocadillos autour de la Plaza de la Virgen ou du Mercado Central, à deux pas des Torres de Serranos — bars locaux, sans chichis.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">15h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 8 9h2.5L7 15h3v6h4v-6h3l-3.5-6H17z" fill="currentColor" stroke="none"/></svg></div>
+        <div>
+          <div class="activity-title">Bioparc Valencia <span class="duration">(2h)</span></div>
+          <p class="activity-desc">Zoo sans barreaux, style savane africaine — éléphants, gorilles, flamants roses dans des habitats ouverts séparés des visiteurs par des fossés invisibles. Parmi les meilleurs zoos d'Europe pour les familles. <span class="kid-tip">Les éléphants passent à quelques mètres du chemin — pas de vitre, pas de grillage.</span> <span class="travel-note">🧭 Le long du Jardin del Turia, ~15 min à pied depuis l'hôtel.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">17h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5 21V10M19 21V10M9 21v-6h6v6M3 10l9-6 9 6"/></svg></div>
+        <div>
+          <div class="activity-title">Torres de Serranos <span class="duration">(45 min)</span></div>
+          <p class="activity-desc">Ancienne porte fortifiée de la ville, on peut grimper jusqu'au sommet pour une vue sur les toits de la vieille ville. <span class="travel-note">🧭 Depuis l'hôtel : environ 15-18 min à pied, en bord du Jardin del Turia.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">19h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Dîner <span class="duration">(1h30)</span></div>
+          <p class="activity-desc"><b>Fideuà</b> dans un restaurant d'El Carmen — le quartier artistique juste à côté de l'hôtel. La fideuà (vermicelles grillés au bouillon de poisson) est aussi valencienne que la paella, moins connue des touristes.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">21h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Retour à l'hôtel</div>
+        </div>
+      </li>
+      </ul>
+    </div>
+    <div class="day">
+      <div class="day-date">21 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-hotel">🚗 À l'hôtel · Uber Cité des Arts</span>
+        <span class="kit-badge non">🛴 Non (intérieur aquarium)</span>
+        <span class="kit-badge oui">🚼 Oui</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">9h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Petit-déjeuner <span class="duration">(30 min)</span></div>
+          <p class="activity-desc">Café à l'hôtel ou bar rapide — ou <b>horchata</b> à emporter si une horchatería se trouve en chemin. Prévoir un petit en-cas pour tenir jusqu'au déjeuner à l'Oceanogràfic.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">10h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12c4-4.2 11-4.2 15 0-4 4.2-11 4.2-15 0z"/><path d="M17.5 12 21 9v6l-3.5-3z"/><circle cx="6.5" cy="11" r=".6" fill="currentColor" stroke="none"/></svg></div>
+        <div>
+          <div class="activity-title">Oceanogràfic <span class="duration">(4h)</span> <span class="tag ok">réservé</span></div>
+          <p class="activity-desc">Le plus grand aquarium d'Europe — dauphins, requins, tunnel sous-marin. Ouverture à <b>10h00</b> — arriver à l'ouverture pour être les premiers. <span class="kid-tip">Spectacle des dauphins à <b>11h15</b> (inclus dans l'entrée, gratuit) — se mettre en place 30 min avant. Ne pas manquer le tunnel sous-marin où les requins passent au-dessus de la tête.</span> <span class="travel-note">🧭 Pas à pied depuis l'hôtel — bus/métro ~20-25 min, Uber/taxi ~15 min.</span> <span class="travel-note">🎟️ Billet journalier sans créneau horaire · 2 adultes 43,05€ + Cléophée 31,95€ · Othilie gratuite (moins de 4 ans, justificatif à l'entrée) · Total : 118,05€ · <b>Réf. 5076032706685958407</b> — billets PDF dans le mail de William (entradas_5076032706685958407.pdf)</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">14h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Déjeuner <span class="duration">(1h)</span></div>
+          <p class="activity-desc">Cafétéria de l'Oceanogràfic — pratique avec les enfants qui ne voudront pas sortir. Ou emporter des bocadillos achetés avant d'entrer.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">15h30</div>
+        <div class="activity-title">Taxi → Albufera <span class="duration">(~20 min)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">16h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="6" r="2.3"/><path d="M3 15c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/><path d="M3 19.5c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/></svg></div>
+        <div>
+          <div class="activity-title">Albufera — village de pêcheurs + balade en barque <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">La lagune où la paella valencienne a été inventée — village El Palmar, roseaux, canards sauvages. Promenade en barque traditionnelle à fond plat (~20 min, env. 5€/pers). <span class="kid-tip">Les filles dans une vraie barque de pêcheur au coucher de soleil — un des moments forts du voyage.</span></p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">17h30</div>
+        <div class="activity-title">Retour Valence en taxi <span class="duration">(~20 min)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">19h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Dîner <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">Bar à tapas en centre-ville — bonne occasion pour l'<b>agua de Valencia</b> (jus d'orange frais + cava, servi en pichet). <span class="kid-tip">Les filles ont leur version : jus d'orange pur pressé à la minute — même verre, même rituel.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">21h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Retour à l'hôtel</div>
+        </div>
+      </li>
+      </ul>
+    </div>
+    <div class="day">
+      <div class="day-date">22 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-route">🚗 En route → Séville (départ 4h du matin)</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">03h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Check-out hôtel <span style="color:var(--moss);font-size:12.5px;font-weight:600;">(dépôt clés possible dès 3h00)</span></div>
+          <p class="activity-desc">Départ en autonomie, dépôt des clés selon les instructions de l'hôte.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">04h00</div>
+        <div class="activity-title">Départ tôt le matin</div>
+      </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="leg" id="seville">
+    <div class="leg-head">
+      <div class="leg-city">Séville</div>
+      <div class="leg-dates">22 → 24 août</div>
+    </div>
+
+    <div class="trip-leg">
+      <div class="trip-time">
+        <div class="trip-label">Départ</div>
+        <div class="trip-time-depart">04h00</div>
+        <div class="trip-line"></div>
+        <div class="trip-pause">pause 1h</div>
+        <div class="trip-line"></div>
+        <div class="trip-label">Arrivée</div>
+        <div class="trip-time-arrive">12h00</div>
+      </div>
+      <div>
+        <div class="trip-route"><svg class="trip-car-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 6.3 6.8A1.6 1.6 0 0 1 7.8 5.6h8.4a1.6 1.6 0 0 1 1.5 1.2L19 11"/><rect x="3" y="11" width="18" height="5.5" rx="1.4"/><circle cx="7.5" cy="18.3" r="1.5" fill="currentColor"/><circle cx="16.5" cy="18.3" r="1.5" fill="currentColor"/></svg>Valence → Séville</div>
+        <div class="trip-detail">7h de route + 1h de pause (long trajet, entre 6h30 et 7h15 selon la route) · le check-out Valence ouvre dès 3h00, donc un départ à 4h00 passe large — penser à alterner qui conduit pendant la pause</div>
+        <div class="trip-checkin match">Chambre dispo à 14h00 — arrivée avec 2h d'avance, mais consigne à bagages en réception confirmée</div>
+      </div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">Occidental Sevilla Viapol</div>
+      <div class="pill ok">Réservé</div>
+      <div class="ticket-meta">
+        <b>Arrivée</b> sam 22 août, à partir de 14h00<br>
+        <b>Départ</b> lun 24 août, jusqu'à 12h00 · 2 nuits, Suite Junior Familiale · 270,32 €<br>
+        Balbino Marrón 9, Nervión, 41018 Séville · +34 954 64 52 54<br>
+        Confirmation 6383891646 / code 1890 · annulation gratuite jusqu'au 19 août 23:59<br>
+        Réception 24h/24, consigne à bagages disponible avant le check-in — pratique vu l'avance à l'arrivée<br>
+        <a href="https://secure.booking.com/confirmation.fr.html?auth_key=CChfYd3JPAkzaKPv" target="_blank" class="res-link">→ Gérer sur Booking.com</a>
+      </div>
+    </div>
+
+    <div class="heat-warning">
+      <p class="heat-warning-title">⚠ Vigilance chaleur</p>
+      <p>Séville fin août : moyenne autour de 35-37°C l'après-midi, ciel dégagé, quasi aucune pluie — et ça peut dépasser 40°C sur un pic de canicule. À vérifier sur la météo réelle 3-4 jours avant d'y être.</p>
+      <p class="heat-warning-sub">Repli si canicule le 23 août</p>
+      <ul>
+        <li>Prendre les billets Alcázar et Cathédrale à horaire fixe, tôt le matin — évite la queue en plein soleil, pas juste la chaleur de la visite</li>
+        <li>Parc de María Luisa en option : à remplacer par un après-midi piscine/hôtel prolongé si ça tape vraiment fort</li>
+        <li>Le flamenco à 18h reste en intérieur climatisé, inchangé quel que soit le temps ce jour-là</li>
+      </ul>
+    </div>
+
+    <div class="specialites">
+      <p class="specialites-title">🍽 Spécialités sévillanes</p>
+      <ul>
+        <li><b>Salmorejo</b> — soupe froide à la tomate, plus épaisse et crémeuse que le gazpacho, garnie de jamón ibérico et d'œuf dur émietté. Plat local par excellence — parfait par 37°C.</li>
+        <li><b>Tapas au comptoir</b> — Séville revendique d'avoir inventé la tapa. Dans les bars traditionnels, une petite assiette est parfois offerte avec la boisson. À chercher dans le Barrio Santa Cruz et le quartier de la Macarena.</li>
+        <li><b>Espinacas con garbanzos</b> — épinards aux pois chiches, tapa maison incontournable dans les bars du centre.</li>
+        <li><b>Pringá</b> — viande mijotée effilochée (porc, chorizo, morcilla) servie sur un toast. Le plat de comptoir typique de Séville, souvent proposé à côté des tapas classiques.</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-date">22 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-hotel">🚗 À l'hôtel</span>
+        <span class="kit-badge non">🛴 Non (vieux Séville)</span>
+        <span class="kit-badge oui">🚼 Oui</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">12h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Dépôt des bagages à l'hôtel</div>
+          <p class="activity-desc">Consigne en réception, avant l'heure officielle du check-in.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">12h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Déjeuner <span class="duration">(1h)</span></div>
+          <p class="activity-desc">Bar ou cervecería dans le quartier Nervión — bars locaux non touristiques, bonnes tapas à prix raisonnables. <b>Salmorejo</b> en entrée (velouté de tomate froid) : parfait après 3h30 de route sous la chaleur.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">14h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Check-in hôtel</div>
+          <p class="activity-desc">Installation dans la Suite Junior Familiale, Occidental Sevilla Viapol.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">14h15</div>
+        <div class="activity-title">Temps libre <span class="duration">(2h45)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">17h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M4.5 20v-7l3-2 3 2v7M13 20v-8l3.5-3 3.5 3v8"/></svg></div>
+        <div>
+          <div class="activity-title">Barrio de Santa Cruz <span class="duration">(1h)</span> <span class="tag opt">optionnel</span></div>
+          <p class="activity-desc">L'ancien quartier juif, ruelles blanches et patios fleuris — agréable en flânerie sans itinéraire précis. <span class="travel-note">🧭 Depuis l'hôtel : ~18 min à pied, ou tram (arrêt San Bernardo devant l'hôtel) + courte marche.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">18h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5 21V10M19 21V10M9 21v-6h6v6M3 10l9-6 9 6"/></svg></div>
+        <div>
+          <div class="activity-title">Plaza de España <span class="duration">(45 min)</span> <span class="tag opt">optionnel</span></div>
+          <p class="activity-desc">Immense place semi-circulaire avec canal à barques et azulejos représentant chaque province — spectaculaire même en passant. <span class="kid-tip">Possibilité de louer une barque à rames sur le canal (environ 6€, 35 minutes) — une façon ludique de découvrir la place autrement.</span> <span class="travel-note">🧭 Depuis l'hôtel : ~12 min à pied (0,8 km) — la plus proche des visites de Séville.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">19h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Dîner <span class="duration">(1h30)</span></div>
+          <p class="activity-desc"><b>Bodega Santa Cruz « Las Columnas »</b> <span class="tag propose">à valider</span> (tapas sévillanes, salmorejo, pringá) — institution familiale près de la cathédrale, ardoise à la craie.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">21h15</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Retour à l'hôtel</div>
+        </div>
+      </li>
+      </ul>
+    </div>
+    <div class="day">
+      <div class="day-date">23 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-hotel">🚗 À l'hôtel</span>
+        <span class="kit-badge non">🛴 Non (vieux Séville)</span>
+        <span class="kit-badge oui">🚼 Oui</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">8h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Petit-déjeuner <span class="duration">(30 min)</span></div>
+          <p class="activity-desc"><b>Tostadas con tomate</b> au bar + café con leche — le petit-déjeuner sévillan. Tôt pour être à La Maestranza à 9h30.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">9h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="10" ry="6"/><path d="M2 12h20"/><path d="M12 6v12"/></svg></div>
+        <div>
+          <div class="activity-title">La Real Maestranza <span class="duration">(1h15)</span></div>
+          <p class="activity-desc">La plus ancienne arène d'Espagne — visite guidée (FR/EN toutes les 20 min) incluant le musée, la chapelle et les écuries. Majoritairement en intérieur. <span class="kid-tip">Othilie : entrée gratuite (moins de 6 ans) · Cléophée : 3,50€ · Adultes : 10€ — à payer sur place, pas de réservation.</span> <span class="travel-note">🧭 Depuis l'hôtel : ~20 min à pied ou taxi ~8 min. Paseo de Cristóbal Colón 12.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">10h45</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Déjeuner dans l'Arenal + pause piscine <span class="duration">(2h30)</span></div>
+          <p class="activity-desc">Déjeuner rapide dans le quartier de l'<b>Arenal</b> juste derrière La Maestranza — <b>salmorejo</b> + montaditos dans un bar de l'Arenal ou de Santa Cruz. Retour à l'hôtel vers 12h30, piscine jusqu'à 14h30.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">16h00</div>
+        <div class="activity-title">Temps libre <span class="duration">(1h)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">17h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 8 9h2.5L7 15h3v6h4v-6h3l-3.5-6H17z" fill="currentColor" stroke="none"/></svg></div>
+        <div>
+          <div class="activity-title">Parc de María Luisa <span class="duration">(45 min)</span></div>
+          <p class="activity-desc">Grand parc ombragé, pigeons, paons et fontaines — bonne respiration après la chaleur du jour. <span class="travel-note">🧭 Depuis l'hôtel : ~12-15 min à pied (0,85 km).</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">18h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5.5L19 4v13"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="17" r="2"/></svg></div>
+        <div>
+          <div class="activity-title">Flamenco, Tablao Las Setas <span class="duration">(1h)</span> <span class="tag ok">réservé</span></div>
+          <p class="activity-desc">Spectacle de 60 minutes, guitare et cante flamenco en direct — le seul horaire fixe de la journée. <span class="travel-note">🎟️ Réf. <b>T1263-260813-60</b> · 2 adultes 76€ + Cléophée 20€ + Othilie gratuite = 96€ · Billets dans le mail de William (no-reply@turitop.com)</span> <span class="travel-note">🧭 Depuis l'hôtel : ~35-40 min à pied (pas recommandé avec la chaleur) — tram + marche ou taxi, ~12-15 min.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">19h15</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Dîner <span class="duration">(1h30)</span></div>
+          <p class="activity-desc"><b>Bar El Rinconcillo</b> (espinacas con garbanzos, pringá, croquetas) — le plus vieux bar de Séville (fondé en 1670), à 5 min de Las Setas. Service au comptoir, ardoise à la craie. <span class="travel-note">🧭 C/ Gerona 40, Barrio Santa Catalina — ~5 min à pied de Las Setas.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">21h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Retour à l'hôtel</div>
+        </div>
+      </li>
+      </ul>
+    </div>
+    <div class="day">
+      <div class="day-date">24 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-hotel">🚗 À l'hôtel le matin · En route → Cadix l'après-midi</span>
+        <span class="kit-badge non">🛴 Non</span>
+        <span class="kit-badge oui">🚼 Oui (matin)</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">8h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Petit-déjeuner <span class="duration">(30 min)</span></div>
+          <p class="activity-desc"><b>Tostadas con tomate</b> à l'hôtel — tôt, check-out à 8h30 pour être à l'Alcázar à 10h00. <span class="travel-note">👗 <b>Tenue obligatoire pour la Cathédrale</b> : épaules et genoux couverts (interdit d'entrer en débardeur, haut sans manches, short ou jupe courte) — prévoir une chemise légère ou un foulard/pareo à nouer sur les épaules.</span></p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">8h30</div>
+        <div class="activity-title">Check-out hôtel + dépôt bagages consigne <span style="color:var(--moss);font-size:12.5px;font-weight:600;">(limite : 12h00)</span></div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">9h15</div>
+        <div class="activity-title">Taxi → quartier historique <span class="duration">(~15 min)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">9h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5 21V10M19 21V10M9 21v-6h6v6M3 10l9-6 9 6"/></svg></div>
+        <div>
+          <div class="activity-title">Balade Barrio Santa Cruz <span class="duration">(30 min)</span></div>
+          <p class="activity-desc">En attendant l'ouverture de l'Alcázar — ruelles blanches et patios fleuris du quartier juif, sans itinéraire fixe. L'entrée de l'Alcázar est à 5 min à pied.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">10h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5 21V10M19 21V10M9 21v-6h6v6M3 10l9-6 9 6"/></svg></div>
+        <div>
+          <div class="activity-title">Alcázar de Séville <span class="duration">(2h)</span> <span class="tag ok">réservé</span></div>
+          <p class="activity-desc">Palais royal mauresque toujours en usage, jardins somptueux et salles couvertes de céramiques. <span class="kid-tip">Six paons se promènent en liberté dans les jardins — combien les filles en repéreront-elles ?</span> <span class="travel-note">🎟️ Réf. <b>24581383</b> · <a href="https://consiguetusentradas.tenemosplan.com/?clave=06f3facff38e0cb13b61ccd29af69df94999af53a1b938d92ed94fe2d117d47203e87" target="_blank">Télécharger les billets</a></span> <span class="travel-note">🧭 5 min à pied depuis Barrio Santa Cruz.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">12h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5 21V10M19 21V10M9 21v-6h6v6M3 10l9-6 9 6"/></svg></div>
+        <div>
+          <div class="activity-title">Cathédrale de Séville + Giralda <span class="duration">(1h)</span> <span class="tag ok">réservé</span></div>
+          <p class="activity-desc">La plus grande cathédrale gothique du monde ; la Giralda se monte par une rampe en pente douce plutôt que des marches, faisable avec les enfants. <span class="travel-note">🎟️ Réf. <b>261CFQVD4J</b> · Voucher_HLZARP7U.pdf (mail William, entradas@servitickets.es)</span> <span class="travel-note">🧭 Juste à côté de l'Alcázar, 3 min à pied.</span> <span class="travel-note">👗 Épaules et genoux couverts obligatoires à l'entrée.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">13h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Déjeuner rapide <span class="duration">(1h)</span></div>
+          <p class="activity-desc">Tapas dans l'<b>Arenal</b> juste derrière la Cathédrale — montaditos, bocadillos, salmorejo. Rapide avant la route vers Cadix.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">14h00</div>
+        <div class="activity-title">Taxi → hôtel, récupération bagages + chargement voiture</div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">15h00</div>
+        <div class="activity-title">Départ vers Cadix</div>
+      </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="leg" id="cadix">
+    <div class="leg-head">
+      <div class="leg-city">Cadix</div>
+      <div class="leg-dates">24 → 26 août</div>
+    </div>
+
+    <div class="trip-leg">
+      <div class="trip-time">
+        <div class="trip-label">Départ</div>
+        <div class="trip-time-depart">15h00</div>
+        <div class="trip-line"></div>
+        <div class="trip-label">Arrivée</div>
+        <div class="trip-time-arrive">16h15</div>
+      </div>
+      <div>
+        <div class="trip-route"><svg class="trip-car-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 6.3 6.8A1.6 1.6 0 0 1 7.8 5.6h8.4a1.6 1.6 0 0 1 1.5 1.2L19 11"/><rect x="3" y="11" width="18" height="5.5" rx="1.4"/><circle cx="7.5" cy="18.3" r="1.5" fill="currentColor"/><circle cx="16.5" cy="18.3" r="1.5" fill="currentColor"/></svg>Séville → Cadix</div>
+        <div class="trip-detail">1h15 de route, sans pause · bagages récupérés à l'hôtel après Alcázar + Cathédrale — arrivée wecamp Cádiz vers 16h15</div>
+        <div class="trip-checkin match">Chambre dispo à 16h00 — arrivée prévue vers 16h15</div>
+      </div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">wecamp Cádiz</div>
+      <div class="pill ok">Réservé</div>
+      <div class="ticket-meta">
+        <b>Arrivée</b> lun 24 août, 16h00 – 20h00<br>
+        <b>Départ</b> mer 26 août, 08h00 – 11h00 · 2 nuits, Chambre Familiale · 435 €<br>
+        Carretera del Portal CA-3113 km 3,3, Cadix · +34 856 565 507<br>
+        Confirmation 5790944566 / code 8546 · annulation gratuite jusqu'au 19 août 23:59<br>
+        <a href="https://secure.booking.com/confirmation.fr.html?auth_key=0W14MX4iBMOTC8co" target="_blank" class="res-link">→ Gérer sur Booking.com</a>
+      </div>
+    </div>
+
+    <div class="heat-warning">
+      <p class="heat-warning-title">📍 Attention à l'emplacement</p>
+      <p>Ce logement est en fait situé à Puerto Real, de l'autre côté de la baie — pas dans Cadix même. La vieille ville, la cathédrale et la Playa de la Caleta sont à environ 15 min en voiture (~12 km), pas à pied. Il faudra reprendre la voiture à chaque sortie vers le centre historique — pas de transport en commun pratique avec des enfants (train ~27 min + marche, bus ~33 min).</p>
+    </div>
+
+    <div class="specialites">
+      <p class="specialites-title">🍽 Spécialités gaditanes</p>
+      <ul>
+        <li><b>Pescaíto frito en cornet</b> — mélange de petits poissons et fruits de mer frits dans une pâte légère, servi dans un cornet de papier et mangé debout dans la rue. LA spécialité de Cadix, et la Freiduría Las Flores est déjà au programme.</li>
+        <li><b>Tortillitas de camarones</b> — galettes fines et très croustillantes aux crevettes grises, spécialité locale que vous trouverez dans toutes les freidurías et beaucoup de bars.</li>
+        <li><b>Atún rojo de almadraba</b> — thon rouge péché dans les filets traditionnels du détroit de Gibraltar, disponible partout en été sous toutes ses formes (tartare, en conserve haut de gamme, grillé). L'une des viandes de thon les plus réputées d'Europe.</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-date">24 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-route">🚗 À prendre (wecamp = voiture obligatoire)</span>
+        <span class="kit-badge non">🛴 Non (arrivée)</span>
+        <span class="kit-badge oui">🚼 Oui</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">16h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Check-in hôtel</div>
+          <p class="activity-desc">Installation, wecamp Cádiz.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">16h30</div>
+        <div class="activity-title">Courses pour le dîner <span class="duration">(1h)</span></div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">17h30</div>
+        <div class="activity-title">Temps libre <span class="duration">(1h30)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">19h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Dîner <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">À la maison, avec les courses du jour.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">20h30</div>
+        <div class="activity-title">Jeux à la maison <span class="duration">(1h)</span></div>
+      </li>
+      </ul>
+    </div>
+    <div class="day">
+      <div class="day-date">25 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-route">🚗 À prendre (wecamp → Cadix, 15 min)</span>
+        <span class="kit-badge oui">🛴 Oui — promenades bord de mer (A/R depuis parking)</span>
+        <span class="kit-badge non">🚼 Non (pas les deux)</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">9h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Petit-déjeuner <span class="duration">(30 min)</span></div>
+          <p class="activity-desc">À la maison.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">9h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5 21V10M19 21V10M9 21v-6h6v6M3 10l9-6 9 6"/></svg></div>
+        <div>
+          <div class="activity-title">Cathédrale de Cadix <span class="duration">(45 min)</span></div>
+          <p class="activity-desc">Cathédrale baroque au dôme doré, face à l'océan — la tour Poniente se monte pour une vue sur toute la baie. <span class="travel-note">🧭 Environ 15 min en voiture depuis le logement (Puerto Real).</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">11h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M4.5 20v-7l3-2 3 2v7M13 20v-8l3.5-3 3.5 3v8"/></svg></div>
+        <div>
+          <div class="activity-title">Vieille ville <span class="duration">(1h)</span></div>
+          <p class="activity-desc">Ruelles étroites entre l'Atlantique et la baie, marché central animé le matin.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">12h00</div>
+        <div class="activity-title">Temps libre <span class="duration">(1h)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">13h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Déjeuner <span class="duration">(1h)</span></div>
+          <p class="activity-desc"><b>Freiduría Marisquería Las Flores</b> <span class="tag propose">à valider</span> (pescaíto frito en cornet, tortillitas de camarones) — cornets de poisson frit à emporter, près de la Plaza Topete. Repas simple et très adapté aux enfants.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">14h00</div>
+        <div class="activity-title">Temps libre <span class="duration">(3h)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">17h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="6" r="2.3"/><path d="M3 15c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/><path d="M3 19.5c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/></svg></div>
+        <div>
+          <div class="activity-title">Playa de la Caleta <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">La plage la plus emblématique de Cadix, entre deux forteresses — eau généralement calme, beau coucher de soleil. <span class="kid-tip">Une jetée en pierre mène au Castillo de San Sebastián, presque en pleine mer — à marée basse, on découvre aussi de petites piscines naturelles dans les rochers.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">19h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Dîner <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">Bar à tapas dans la vieille ville — <b>tortillitas de camarones</b> (galettes de crevettes grises frites, spécialité gaditane) + verre de <b>fino</b> (xérès sec local). À finir avant 21h pour reprendre la voiture.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">21h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Retour au logement</div>
+          <p class="activity-desc">Environ 15 min en voiture.</p>
+        </div>
+      </li>
+      </ul>
+    </div>
+    <div class="day">
+      <div class="day-date">26 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-route">🚗 En route → Alvor</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">9h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Petit-déjeuner <span class="duration">(30 min)</span></div>
+          <p class="activity-desc">À la maison.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">9h30</div>
+        <div class="activity-title">Matin chill à la maison <span class="duration">(1h)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">10h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Check-out <span style="color:var(--moss);font-size:12.5px;font-weight:600;">(limite : 11h00)</span></div>
+          <p class="activity-desc">Restitution du logement, wecamp Cádiz.</p>
+        </div>
+      </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="leg" id="alvor">
+    <div class="leg-head">
+      <div class="leg-city">Alvor</div>
+      <div class="leg-dates">26 → 28 août</div>
+    </div>
+
+    <div class="trip-leg">
+      <div class="trip-time">
+        <div class="trip-label">Départ</div>
+        <div class="trip-time-depart">10h45</div>
+        <div class="trip-line"></div>
+        <div class="trip-pause">pause 1h</div>
+        <div class="trip-line"></div>
+        <div class="trip-label">Arrivée</div>
+        <div class="trip-time-arrive">16h00</div>
+      </div>
+      <div>
+        <div class="trip-route"><svg class="trip-car-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 6.3 6.8A1.6 1.6 0 0 1 7.8 5.6h8.4a1.6 1.6 0 0 1 1.5 1.2L19 11"/><rect x="3" y="11" width="18" height="5.5" rx="1.4"/><circle cx="7.5" cy="18.3" r="1.5" fill="currentColor"/><circle cx="16.5" cy="18.3" r="1.5" fill="currentColor"/></svg>Cadix → Alvor</div>
+        <div class="trip-detail">4h15 de route + 1h de pause (via Lagos) · départ juste avant la limite du check-out Cadix (11h00 dernier délai) — la pause tombe bien pour le déjeuner</div>
+        <div class="trip-checkin match">Chambre dispo à 16h00 — pile à l'heure</div>
+      </div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">Pelican Alvor</div>
+      <div class="pill ok">Réservé</div>
+      <div class="ticket-meta">
+        <b>Arrivée</b> mer 26 août, à partir de 16h00<br>
+        <b>Départ</b> ven 28 août, jusqu'à 11h00 · 2 nuits, Studio · 491,32 €<br>
+        Sítio Da Dourada, 8500-053 Alvor · +351 282 411 490<br>
+        Confirmation 6854234252 / code 4564 · annulation gratuite jusqu'au 22 août 23:59<br>
+        <a href="https://secure.booking.com/confirmation.fr.html?auth_key=5t3gntWNTPagYF5G" target="_blank" class="res-link">→ Gérer sur Booking.com</a>
+      </div>
+    </div>
+
+    <div class="specialites">
+      <p class="specialites-title">🍽 Spécialités de l'Algarve</p>
+      <ul>
+        <li><b>Cataplana</b> — ragoût de fruits de mer (palourdes, crevettes, poisson) cuit dans un récipient en cuivre refermant en deux comme une palourde. Plat emblématique de l'Algarve, souvent cuisiné pour deux à partager.</li>
+        <li><b>Sardinhas assadas</b> — sardines grillées au charbon, servies sur du pain de maïs. Partout en été, incontournables.</li>
+        <li><b>Percebes</b> — pousses-pieds (crustacés récoltés à la main sur les rochers côtiers), à l'aspect étrange mais au goût iodé exceptionnel. Servis juste ébouillantés.</li>
+        <li><b>Pastel de nata</b> — la fameuse tarte à la crème caramélisée, déjà présente ici avant Lisbonne, à saupoudrer de cannelle. <span class="specialites-kid">Les filles vont en redemander à chaque escale jusqu'à Lisbonne.</span></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-date">26 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-route">🚗 À prendre (Algarve)</span>
+        <span class="kit-badge non">🛴 Non (arrivée)</span>
+        <span class="kit-badge oui">🚼 Oui</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">16h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Check-in hôtel</div>
+          <p class="activity-desc">Installation, Pelican Alvor.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">16h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 8 9h2.5L7 15h3v6h4v-6h3l-3.5-6H17z" fill="currentColor" stroke="none"/></svg></div>
+        <div>
+          <div class="activity-title">Passadiços de Alvor <span class="duration">(1h)</span></div>
+          <p class="activity-desc">Passerelles en bois à travers les marais salants et la lagune — plat, facile avec une poussette, hérons et parfois flamants roses. <span class="travel-note">🧭 Environ 2 km depuis l'hôtel — ~25-30 min à pied, ~5-8 min en voiture.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">17h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="6" r="2.3"/><path d="M3 15c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/><path d="M3 19.5c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/></svg></div>
+        <div>
+          <div class="activity-title">Praia dos Três Irmãos <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">Plage aux falaises dorées et arches rocheuses, criques abritées à marée basse — belle pour finir la journée. <span class="kid-tip">À marée basse, des grottes et arches se dévoilent entre les rochers — de quoi jouer aux exploratrices.</span> <span class="travel-note">🧭 Accessible par les passadiços, ou ~8 min en voiture depuis l'hôtel.</span></p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">19h15</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Dîner <span class="duration">(1h30)</span></div>
+          <p class="activity-desc"><b>Cataplana</b> dans un restaurant d'Alvor (fruits de mer et poisson mijotés dans un plat en cuivre fermé, spécialité de l'Algarve) — plusieurs adresses dans le village à 10 min à pied de l'hôtel.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">21h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Retour à l'hôtel</div>
+        </div>
+      </li>
+      </ul>
+    </div>
+    <div class="day">
+      <div class="day-date">27 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-route">🚗 À prendre</span>
+        <span class="kit-badge oui">🛴 Promenade village matin (A/R)</span>
+        <span class="kit-badge oui">🚼 Plage l'après-midi (sable = pas de trottinettes)</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">8h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Petit-déjeuner <span class="duration">(30 min)</span></div>
+          <p class="activity-desc"><b>Pastel de nata</b> + café à la padaria du village d'Alvor — premier vrai pastel de nata de l'Algarve, chaud sorti du four. <span class="kid-tip">Introduction officielle des filles à la pâtisserie portugaise — elles en redemanderont à Lisbonne.</span></p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">9h00</div>
+        <div class="activity-title">✉️ Mail à Feels Like Home — confirmation d'arrivée à Lisbonne le 31</div>
+        <p class="activity-desc" style="font-size:13px;color:var(--slate);margin:2px 0 0 0;">Leur écrire pour confirmer que vous venez d'arriver au Portugal et que vous récupérez les clés le 31 août. Rappeler l'heure d'arrivée prévue au Welcome Center (Av. da Liberdade 36C, 1er étage B). Réservation <b>#FLH1879568312</b>.</p>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">9h15</div>
+        <div class="activity-title">Temps libre <span class="duration">(45 min)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">10h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M4.5 20v-7l3-2 3 2v7M13 20v-8l3.5-3 3.5 3v8"/></svg></div>
+        <div>
+          <div class="activity-title">Lagos, en excursion depuis Alvor <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">Ville fortifiée avec une jolie vieille ville et une marina animée. <span class="travel-note">🧭 Environ 20 min en voiture depuis Alvor.</span></p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">11h30</div>
+        <div class="activity-title">Temps libre <span class="duration">(1h)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">12h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Déjeuner <span class="duration">(1h)</span></div>
+          <p class="activity-desc"><b>Sardinhas assadas</b> à Lagos (sardines grillées au charbon de bois, servies sur briques en terre cuite — classique de l'été portugais) — terrasse face au port.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">13h30</div>
+        <div class="activity-title">Temps libre <span class="duration">(1h)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">14h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M4.5 20v-7l3-2 3 2v7M13 20v-8l3.5-3 3.5 3v8"/></svg></div>
+        <div>
+          <div class="activity-title">Ferragudo <span class="duration">(1h)</span></div>
+          <p class="activity-desc">Petit village de pêcheurs typique, ruelles blanches et bateaux colorés sur l'estuaire de l'Arade. <span class="travel-note">🧭 Environ 15 min en voiture depuis Alvor.</span></p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">15h30</div>
+        <div class="activity-title">Temps libre <span class="duration">(1h30)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">17h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18l1.5-5h13L20 18"/><path d="M12 13V5l5 3.5"/><path d="M2 21c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/></svg></div>
+        <div>
+          <div class="activity-title">Marina de Portimão <span class="duration">(45 min)</span></div>
+          <p class="activity-desc">Front de mer moderne avec restaurants et bateaux — bonne option pour une glace en fin d'après-midi. <span class="travel-note">🧭 Environ 10-12 min en voiture depuis Alvor.</span></p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">17h45</div>
+        <div class="activity-title">Temps libre <span class="duration">(1h15)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">19h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Dîner <span class="duration">(1h30)</span></div>
+          <p class="activity-desc"><b>O Sueste</b> <span class="tag propose">à valider</span> (sardinhas assadas, poisson grillé au charbon de bois) — sur le quai des pêcheurs de Ferragudo, coucher de soleil sur l'estuaire.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">21h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Retour à l'hôtel</div>
+          <p class="activity-desc">Environ 15 min en voiture depuis Ferragudo.</p>
+        </div>
+      </li>
+      </ul>
+    </div>
+    <div class="day">
+      <div class="day-date">28 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-route">🚗 En route → Albufeira</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">9h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Petit-déjeuner <span class="duration">(30 min)</span></div>
+          <p class="activity-desc">À définir.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">9h30</div>
+        <div class="activity-title">Matinée libre / plage <span class="duration">(1h)</span></div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">10h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Check-out hôtel <span style="color:var(--moss);font-size:12.5px;font-weight:600;">(limite : 11h00)</span></div>
+          <p class="activity-desc">Restitution du studio, Pelican Alvor.</p>
+        </div>
+      </li>
+        <li class="activity logistics">
+        <div class="activity-time">11h00</div>
+        <div class="activity-title">Départ vers Albufeira</div>
+      </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="leg" id="albufeira">
+    <div class="leg-head">
+      <div class="leg-city">Albufeira</div>
+      <div class="leg-dates">28 → 31 août</div>
+    </div>
+
+    <div class="trip-leg">
+      <div class="trip-time">
+        <div class="trip-label">Départ</div>
+        <div class="trip-time-depart">11h00</div>
+        <div class="trip-line"></div>
+        <div class="trip-label">Arrivée</div>
+        <div class="trip-time-arrive">11h30</div>
+      </div>
+      <div>
+        <div class="trip-route"><svg class="trip-car-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 6.3 6.8A1.6 1.6 0 0 1 7.8 5.6h8.4a1.6 1.6 0 0 1 1.5 1.2L19 11"/><rect x="3" y="11" width="18" height="5.5" rx="1.4"/><circle cx="7.5" cy="18.3" r="1.5" fill="currentColor"/><circle cx="16.5" cy="18.3" r="1.5" fill="currentColor"/></svg>Alvor → Albufeira</div>
+        <div class="trip-detail">30 min de route, sans pause · départ après le check-out Alvor (11h00)</div>
+        <div class="trip-checkin">Pas encore de logement réservé côté Albufeira</div>
+      </div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">Albufeira (ou plus au nord ?)</div>
+      <div class="pill off">En réflexion</div>
+      <div class="ticket-meta">
+        <b>28 → 31 août</b> · rien de réservé — volontaire, le choix de la zone n'est pas encore tranché<br>
+        Albufeira et Vila Nova de Milfontes sont toutes les deux envisagées, 4 personnes
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date">—</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-route">🚗 À prendre (Algarve)</span>
+        <span class="kit-badge non">🛴 À définir</span>
+        <span class="kit-badge oui">🚼 Oui</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity logistics tbd">
+        <div class="activity-time">à définir</div>
+        <div class="activity-title">Check-in / check-out — dépend du logement finalement choisi</div>
+      </li>
+        <li class="activity logistics tbd">
+        <div class="activity-time">à définir</div>
+        <div class="activity-title">Petit-déjeuner / déjeuner / dîner — à voir une fois la base choisie</div>
+      </li>
+
+        <li class="activity">
+        <div class="activity-time">—</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M4.5 20v-7l3-2 3 2v7M13 20v-8l3.5-3 3.5 3v8"/></svg></div>
+        <div>
+          <div class="activity-title">Vieille ville d'Albufeira <span class="duration">(1h)</span></div>
+          <p class="activity-desc">Ruelles pavées et petites places, centre historique perché au-dessus des plages.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">—</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="6" r="2.3"/><path d="M3 15c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/><path d="M3 19.5c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/></svg></div>
+        <div>
+          <div class="activity-title">Praia dos Pescadores <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">La plage principale d'Albufeira, accès direct par un tunnel creusé dans la falaise.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">—</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="6" r="2.3"/><path d="M3 15c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/><path d="M3 19.5c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/></svg></div>
+        <div>
+          <div class="activity-title">Praia de São Rafael <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">Une des plus belles criques de l'Algarve, falaises dorées et arches naturelles.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">—</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="6" r="2.3"/><path d="M3 15c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/><path d="M3 19.5c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/></svg></div>
+        <div>
+          <div class="activity-title">Praia da Falésia <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">6 km de plage sous des falaises rouge ocre, spectaculaire et moins fréquentée.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">—</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18l1.5-5h13L20 18"/><path d="M12 13V5l5 3.5"/><path d="M2 21c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/></svg></div>
+        <div>
+          <div class="activity-title">Vilamoura <span class="duration">(1h)</span></div>
+          <p class="activity-desc">Grande marina avec restaurants et bateaux de plaisance, ambiance plus urbaine.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">—</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5 21V10M19 21V10M9 21v-6h6v6M3 10l9-6 9 6"/></svg></div>
+        <div>
+          <div class="activity-title">Silves <span class="duration">(1h)</span> <span class="tag opt">optionnel</span></div>
+          <p class="activity-desc">Ancienne capitale mauresque de l'Algarve, château de grès rouge dominant la ville.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">—</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M4.5 20v-7l3-2 3 2v7M13 20v-8l3.5-3 3.5 3v8"/></svg></div>
+        <div>
+          <div class="activity-title">Loulé <span class="duration">(1h)</span> <span class="tag opt">optionnel</span></div>
+          <p class="activity-desc">Marché couvert historique et vieille ville tranquille, loin de l'agitation côtière.</p>
+        </div>
+      </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="leg" id="lisbonne">
+    <div class="leg-head">
+      <div class="leg-city">Lisbonne</div>
+      <div class="leg-dates">31 août → 30 sept</div>
+    </div>
+
+    <div class="trip-leg">
+      <div class="trip-time">
+        <div class="trip-label">Départ</div>
+        <div class="trip-time-depart">13h30</div>
+        <div class="trip-line"></div>
+        <div class="trip-label">Arrivée</div>
+        <div class="trip-time-arrive">16h00</div>
+      </div>
+      <div>
+        <div class="trip-route"><svg class="trip-car-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 6.3 6.8A1.6 1.6 0 0 1 7.8 5.6h8.4a1.6 1.6 0 0 1 1.5 1.2L19 11"/><rect x="3" y="11" width="18" height="5.5" rx="1.4"/><circle cx="7.5" cy="18.3" r="1.5" fill="currentColor"/><circle cx="16.5" cy="18.3" r="1.5" fill="currentColor"/></svg>Albufeira → Lisbonne</div>
+        <div class="trip-detail">2h30 de route, sans pause</div>
+        <div class="trip-checkin match">Clés dès 15h00 — pile à l'heure du check-in</div>
+      </div>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-name">Campo Ourique Apartment with View</div>
+      <div class="pill ok">Réservé</div>
+      <div class="ticket-meta">
+        <b>Arrivée</b> lun 31 août, à partir de 15h00<br>
+        <b>Départ</b> mer 30 septembre, jusqu'à 11h00 · 1 mois · 3 600 €<br>
+        Rua Domingos Sequeira 27, 7 Dto, 1350-119 Lisboa<br>
+        <b>Retrait des clés</b> (adresse différente de l'appartement) — de 15h à 23h30 : Welcome Center, Av. da Liberdade 36C, 1er étage B, 1250-145 Lisboa, +351 924 399 624 · après 23h30 : Hôtel Boemio, Largo de São Domingos 22, 1100-076 Lisboa, +351 963 817 428<br>
+        Taxe de séjour : 4 €/personne/jour, max 7 jours, enfants de moins de 12 ans exonérés<br>
+        Réservé en direct avec Feels Like Home, réservation #FLH1879568312 (contact : info@feelslikehome.pt, +351 924 399 624) — pas via Airbnb, l'annonce Airbnb repérée au départ était un autre appartement et n'a pas été retenue ; pas de lien Airbnb pour celui-ci<br>
+        <a href="mailto:info@feelslikehome.pt" class="res-link">→ Écrire à Feels Like Home</a>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date">31 août</div>
+      <div class="kit-jour">
+        <span class="kit-badge car-route">🚗 En route → Lisbonne (déménagement)</span>
+      </div>
+      <ul class="day-items">
+        <li class="activity">
+        <div class="activity-time">15h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Retrait des clés</div>
+          <p class="activity-desc">Au Welcome Center (Av. da Liberdade 36C), pas directement à l'appartement.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">15h45</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
+        <div>
+          <div class="activity-title">Installation dans l'appartement</div>
+          <p class="activity-desc">Rua Domingos Sequeira 27, Campo Ourique.</p>
+        </div>
+      </li>
+        <li class="activity logistics tbd">
+        <div class="activity-time">soir</div>
+        <div class="activity-title">Premières courses / dîner — à définir sur place</div>
+      </li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="ecarte">Écarté du programme</h2>
+  <p class="section-note">Retiré pour l'instant, pas oublié — gardé ici pour repiocher dedans si le programme bouge.</p>
+
+  <div class="board">
+    <div class="shelved">
+      <div class="shelved-name">Isla Mágica</div>
+      <div class="shelved-date">Prévu initialement le 24 août — Séville</div>
+      <p>Parc à thème à sensations (montagnes russes, attractions fortes). Écarté : plus adapté aux grands enfants/ados qu'à 3 et 6 ans. La matinée du 24 sert maintenant à souffler avant la route vers Cadix.</p>
+    </div>
+
+    <div class="shelved">
+      <div class="shelved-name">Slide & Splash</div>
+      <div class="shelved-date">Prévu initialement le 28 août — région d'Alvor / Lagos</div>
+      <p>Parc aquatique avec toboggans. Écarté pour l'instant : à revérifier les tailles/âges minimums des toboggans avant de le remettre au programme — la benjamine (3 ans) pourrait être cantonnée à la zone bébé.</p>
+    </div>
+
+    <div class="shelved">
+      <div class="shelved-name">Aldeia Azul Resort — Lagos</div>
+      <div class="shelved-date">Logement prévu initialement pour les nuits du 25 → 27 août</div>
+      <p>Maison 1 chambre avec mezzanine à Lagos, Rua Rainha Santa Isabel nº1. Annulé : elle chevauchait une nuit avec Pelican Alvor, gardé à la place pour la même période (26 → 28 août).</p>
+    </div>
+  </div>
+
+  <footer class="note">17 août — 31 août 2026</footer>
+
+</div>
+
+<button id="back-to-top" aria-label="Remonter en haut de la page">↑</button>
+
+<script>
+(function(){
+  var STORAGE_KEY = 'roadtrip-iberique-dismissed-alerts-v1';
+
+  function getDismissed(){
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
+    catch(e){ return []; }
+  }
+  function addDismissed(id){
+    var list = getDismissed();
+    if(list.indexOf(id) === -1){
+      list.push(id);
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); } catch(e){}
+    }
+  }
+  function hideAlertItem(id){
+    var li = document.querySelector('.alert li[data-alert-id="' + id + '"]');
+    if(li) li.remove();
+  }
+  function maybeHideAlertBox(){
+    var box = document.querySelector('.alert');
+    var list = box && box.querySelector('ul');
+    if(box && list && list.children.length === 0){
+      box.style.display = 'none';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    getDismissed().forEach(hideAlertItem);
+    maybeHideAlertBox();
+
+    var dismissButtons = document.querySelectorAll('.alert-dismiss');
+    for(var i = 0; i < dismissButtons.length; i++){
+      dismissButtons[i].addEventListener('click', function(){
+        var id = this.getAttribute('data-dismiss');
+        hideAlertItem(id);
+        addDismissed(id);
+        maybeHideAlertBox();
+      });
+    }
+
+    var backToTop = document.getElementById('back-to-top');
+    if(backToTop){
+      window.addEventListener('scroll', function(){
+        if(window.scrollY > 400){ backToTop.classList.add('visible'); }
+        else { backToTop.classList.remove('visible'); }
+      }, {passive:true});
+
+      backToTop.addEventListener('click', function(){
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
+    }
+  });
+})();
+</script>
+
+</div><!-- /main-content -->
+
+<script>
+(function(){
+  var KEY = 'rt_auth_v1';
+  var PWD = '123Lisbonne!';
+  function unlock(){
+    document.getElementById('pwd-gate').style.display = 'none';
+    document.getElementById('main-content').style.display = '';
+    localStorage.setItem(KEY, '1');
+  }
+  if(window.location.protocol === 'file:' || localStorage.getItem(KEY) === '1'){ unlock(); return; }
+  var input = document.getElementById('pwd-input');
+  var err = document.getElementById('pwd-err');
+  function check(){
+    if(input.value === PWD){ unlock(); }
+    else{ err.style.display = 'block'; input.select(); }
+  }
+  document.getElementById('pwd-btn').addEventListener('click', check);
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter') check(); });
+})();
+</script>
+
+</body></html>
