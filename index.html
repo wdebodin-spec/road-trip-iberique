@@ -311,12 +311,6 @@
     padding-top: 2px;
   }
   /* ---- kit du jour ---- */
-  .kit-jour{ display:flex; gap:6px; flex-wrap:wrap; padding:2px 0 12px; grid-column:2; }
-  .kit-badge{ font-size:10.5px; font-family:"SF Mono",Menlo,ui-monospace,monospace; border-radius:3px; padding:2px 7px; letter-spacing:0.01em; white-space:nowrap; }
-  .kit-badge.car-hotel{ background:rgba(0,0,0,0.05); color:var(--ink-soft); }
-  .kit-badge.car-route{ background:rgba(70,100,160,0.12); color:var(--blue); font-weight:700; }
-  .kit-badge.oui{ background:rgba(74,119,75,0.13); color:var(--moss); font-weight:600; }
-  .kit-badge.non{ background:rgba(0,0,0,0.03); color:var(--ink-soft); opacity:0.38; text-decoration:line-through; }
   .day-items{ grid-column:2; }
     list-style: none;
     margin: 0;
@@ -836,11 +830,11 @@
         <div class="trip-pause">pause 1h</div>
         <div class="trip-line"></div>
         <div class="trip-label">Arrivée</div>
-        <div class="trip-time-arrive">10h45</div>
+        <div class="trip-time-arrive">11h30</div>
       </div>
       <div>
         <div class="trip-route"><svg class="trip-car-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 6.3 6.8A1.6 1.6 0 0 1 7.8 5.6h8.4a1.6 1.6 0 0 1 1.5 1.2L19 11"/><rect x="3" y="11" width="18" height="5.5" rx="1.4"/><circle cx="7.5" cy="18.3" r="1.5" fill="currentColor"/><circle cx="16.5" cy="18.3" r="1.5" fill="currentColor"/></svg>Port Grimaud → Barcelone</div>
-        <div class="trip-detail">5h45 de route + 1h de pause · départ très tôt exprès, c'est le plus long trajet du séjour — penser à alterner qui conduit pendant la pause</div>
+        <div class="trip-detail">6h30 de route + 1h de pause · départ très tôt exprès, c'est le plus long trajet du séjour — penser à alterner qui conduit pendant la pause</div>
         <div class="trip-checkin match">Chambre dispo à 14h00 — arrivée avec 3h15 d'avance, mais consigne à bagages en réception confirmée</div>
       </div>
     </div>
@@ -870,11 +864,6 @@
 
     <div class="day">
       <div class="day-date">17 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-hotel">🚗 À l'hôtel</span>
-        <span class="kit-badge oui">🛴 Promenade bord de mer (A/R)</span>
-        <span class="kit-badge oui">🚼 CosmoCaixa (sorties séparées)</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">11h00</div>
@@ -888,16 +877,16 @@
         <div class="activity-time">11h30</div>
         <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 8 9h2.5L7 15h3v6h4v-6h3l-3.5-6H17z" fill="currentColor" stroke="none"/></svg></div>
         <div>
-          <div class="activity-title">Balade — Parc Diagonal Mar + Rambla del Poblenou <span class="duration">(1h30)</span></div>
-          <p class="activity-desc">Dégourdir les jambes après la route — le <b>Parc de Diagonal Mar</b> est à 5 min à pied de l'hôtel (jets d'eau, pelouses, jeux pour enfants). <span class="kid-tip">Les filles peuvent courir librement avant de repartir.</span> Continuer vers la <b>Rambla del Poblenou</b>, boulevard piéton animé du quartier, pour finir dans un café en terrasse.</p>
+          <div class="activity-title">Balade — depuis l'hôtel vers La Rambla <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">Marche depuis l'hôtel, puis taxi jusqu'en bas de La Rambla pour rejoindre Barceloneta.</p>
         </div>
       </li>
         <li class="activity">
         <div class="activity-time">13h00</div>
         <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
         <div>
-          <div class="activity-title">Déjeuner <span class="duration">(1h)</span></div>
-          <p class="activity-desc">Terrasse sur la Rambla del Poblenou — <b>pa amb tomàquet</b> + bocadillo dans un bar du quartier. Simple et rapide avant de récupérer la chambre.</p>
+          <div class="activity-title">Déjeuner — Bar Boticora <span class="duration">(1h)</span></div>
+          <p class="activity-desc"><b>Bar Boticora</b>, Rambla del Poblenou — tapas : croquetas (les filles ont adoré), tortilla, pimientos del padrón, ensalada rusa.</p>
         </div>
       </li>
         <li class="activity">
@@ -910,26 +899,14 @@
       </li>
         <li class="activity logistics">
         <div class="activity-time">14h15</div>
-        <div class="activity-title">Repos à l'hôtel <span class="duration">(1h15)</span></div>
+        <div class="activity-title">Repos à l'hôtel <span class="duration">(jusqu'à 16h00)</span></div>
       </li>
         <li class="activity">
-        <div class="activity-time">15h30</div>
-        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5 21V10M19 21V10M9 21v-6h6v6M3 10l9-6 9 6"/></svg></div>
-        <div>
-          <div class="activity-title">Cosmo Caixa <span class="duration">(2h)</span></div>
-          <p class="activity-desc">Musée des sciences interactif, forêt tropicale grandeur nature reconstituée à l'intérieur — parfait en début d'après-midi, bien climatisé, après le repos. <span class="kid-tip">La forêt tropicale avec de vrais arbres et animaux fascine les filles.</span> <span class="travel-note">🧭 ~20-25 min en Uber/taxi depuis l'hôtel.</span> <span class="kid-tip">🎟️ Billets sur place le jour même, pas besoin de réserver — Adultes : 8€/pers · Cléophée &amp; Othilie : <b>gratuit</b> (moins de 16 ans). Total : ~16€ pour vous deux.</span> <span class="travel-note">💡 Déplaçable au 19 matin (jour de départ vers Valence) si vous êtes trop crevés à l'arrivée.</span></p>
-        </div>
-      </li>
-        <li class="activity logistics">
-        <div class="activity-time">17h30</div>
-        <div class="activity-title">Taxi Cosmo Caixa → Barceloneta <span class="duration">(~25 min)</span></div>
-      </li>
-        <li class="activity">
-        <div class="activity-time">18h00</div>
+        <div class="activity-time">16h00</div>
         <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="6" r="2.3"/><path d="M3 15c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/><path d="M3 19.5c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/></svg></div>
         <div>
-          <div class="activity-title">Plage de la Barceloneta <span class="duration">(1h)</span></div>
-          <p class="activity-desc">La plage historique de Barcelone — bain ou balade en bord de mer en fin de journée, avant le dîner à Can Solé à deux pas. Quartier de pêcheurs plein de vie, chiringuitos, animation. <span class="travel-note">🧭 ~25 min en taxi depuis Cosmo Caixa.</span></p>
+          <div class="activity-title">Balade — Port Olimpic → Barceloneta → La Rambla → Agua <span class="duration">(3h)</span></div>
+          <p class="activity-desc">À pied depuis l'hôtel jusqu'au Port Olimpic, puis balade le long de la plage de Barceloneta. Taxi Port Olimpic → bas de La Rambla : caricature des filles, t-shirts souvenirs. Retour à pied le long de Barceloneta jusqu'au restaurant Agua.</p>
         </div>
       </li>
         <li class="activity">
@@ -937,7 +914,7 @@
         <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
         <div>
           <div class="activity-title">Dîner <span class="duration">(1h30)</span></div>
-          <p class="activity-desc"><b>Can Solé</b> <span class="tag propose">à valider</span> (paella, fruits de mer catalans) — institution familiale de Barceloneta, depuis plus d'un siècle.</p>
+          <p class="activity-desc"><b>Agua</b> — Passeig Marítim de la Barceloneta, 30. Cuisine méditerranéenne, vue mer, terrasse.</p>
         </div>
       </li>
         <li class="activity">
@@ -951,38 +928,49 @@
     </div>
     <div class="day">
       <div class="day-date">18 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-hotel">🚗 À l'hôtel</span>
-        <span class="kit-badge non">🛴 Non (pentes + foule)</span>
-        <span class="kit-badge oui">🚼 Oui</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">8h30</div>
         <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
         <div>
           <div class="activity-title">Petit-déjeuner <span class="duration">(30 min)</span></div>
-          <p class="activity-desc">Bar du quartier — <b>pa amb tomàquet</b> grillé + café amb llet. Le petit-déjeuner catalan par défaut : rapide, servi automatiquement dans n'importe quel bar, 3-4€ par personne.</p>
+          <p class="activity-desc"><b>Fleca Juanita</b> — boulangerie du quartier.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">9h00</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 8 9h2.5L7 15h3v6h4v-6h3l-3.5-6H17z" fill="currentColor" stroke="none"/></svg></div>
+        <div>
+          <div class="activity-title">Parc devant l'hôtel <span class="duration">(~30 min)</span></div>
+          <p class="activity-desc">Petit parc avec balançoires juste devant l'Eurohotel — les filles ont joué avant le départ.</p>
         </div>
       </li>
         <li class="activity logistics">
-        <div class="activity-time">9h00</div>
-        <div class="activity-title">Temps libre <span class="duration">(1h30)</span></div>
+        <div class="activity-time">9h30</div>
+        <div class="activity-title">Retour à l'hôtel — finir de se préparer</div>
       </li>
         <li class="activity">
         <div class="activity-time">10h30</div>
         <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 8 9h2.5L7 15h3v6h4v-6h3l-3.5-6H17z" fill="currentColor" stroke="none"/></svg></div>
         <div>
           <div class="activity-title">Parc Güell <span class="duration">(1h30)</span> <span class="tag ok">réservé</span></div>
-          <p class="activity-desc">Le parc fantasque de Gaudí — mosaïques colorées, colonnades et vue sur toute la ville depuis la terrasse ondulée. <span class="kid-tip">À repérer : le petit dragon en mosaïque (« El Drac ») sur l'escalier d'entrée, l'un des symboles les plus photographiés de Barcelone.</span> <span class="travel-note">🧭 Pas à pied depuis l'hôtel — ~30 min en métro + bus, ou ~20-25 min en Uber/taxi.</span></p>
+          <p class="activity-desc">Le parc fantasque de Gaudí — mosaïques colorées, colonnades et vue sur toute la ville depuis la terrasse ondulée.</p>
         </div>
       </li>
         <li class="activity">
         <div class="activity-time">12h00</div>
         <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
         <div>
-          <div class="activity-title">Déjeuner <span class="duration">(1h)</span></div>
-          <p class="activity-desc">Bar à tapas de l'Eixample (plein de choix à 5 min de la Sagrada) — <b>pa amb tomàquet</b>, croquetes, patatas bravas. Option dessert : <b>crema catalana</b>.</p>
+          <div class="activity-title">Pause boisson — La Frontera</div>
+          <p class="activity-desc">Stop rafraîchissement en chemin entre le Parc Güell et la Sagrada Família — trajet entier fait à pied.</p>
+        </div>
+      </li>
+        <li class="activity">
+        <div class="activity-time">12h30</div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
+        <div>
+          <div class="activity-title">Déjeuner à emporter — Cafecito</div>
+          <p class="activity-desc">Bocadillos à emporter au <b>Cafecito</b>, mangés en chemin vers la Sagrada Família.</p>
         </div>
       </li>
         <li class="activity">
@@ -990,70 +978,56 @@
         <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5 21V10M19 21V10M9 21v-6h6v6M3 10l9-6 9 6"/></svg></div>
         <div>
           <div class="activity-title">Sagrada Família <span class="duration">(1h30)</span> <span class="tag ok">réservé</span></div>
-          <p class="activity-desc">La basilique inachevée de Gaudí — forêt de colonnes à l'intérieur, vitraux qui inondent l'église de couleur. Penser à l'appli officielle pour l'audioguide. <span class="kid-tip">Vers midi, la lumière traverse les vitraux et baigne le chœur d'une lueur dorée — un joli moment à guetter avec les filles.</span> <span class="travel-note">🧭 Depuis Parc Güell : ~20-25 min en métro, ~15 min en Uber/taxi.</span></p>
+          <p class="activity-desc">La basilique inachevée de Gaudí — forêt de colonnes à l'intérieur, vitraux qui inondent l'église de couleur. ✨ <b>Exceptionnel. Les quatre ont adoré — de dingue.</b></p>
         </div>
       </li>
-        <li class="activity logistics">
+        <li class="activity">
         <div class="activity-time">14h45</div>
-        <div class="activity-title">Temps libre <span class="duration">(1h45)</span></div>
-      </li>
-        <li class="activity">
-        <div class="activity-time">16h30</div>
-        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5 21V10M19 21V10M9 21v-6h6v6M3 10l9-6 9 6"/></svg></div>
+        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 8 9h2.5L7 15h3v6h4v-6h3l-3.5-6H17z" fill="currentColor" stroke="none"/></svg></div>
         <div>
-          <div class="activity-title">Casa Batlló et Casa Milà <span class="duration">(45 min)</span></div>
-          <p class="activity-desc">Deux façades signature de Gaudí sur le Passeig de Gràcia, à admirer depuis la rue — balcons en forme de masques, toit ondulé façon dragon. <span class="kid-tip">Le toit ondulé serait le dos d'un dragon vaincu par Saint Georges — les filles peuvent chercher l'épée plantée dedans (la petite tourelle à croix).</span> <span class="travel-note">🧭 Depuis la Sagrada Família : ~15 min en métro (ligne directe), ~10-12 min en Uber/taxi.</span></p>
+          <div class="activity-title">Balade &amp; shopping — Passeig de Gràcia → Casa Batlló → Plaza Catalunya → Parc de la Ciutadella</div>
+          <p class="activity-desc">Grande balade à pied depuis la Sagrada Família : Passeig de Gràcia (façade Casa Batlló), shopping (Loewe — portefeuille pour William), Plaza Catalunya, Parc de la Ciutadella. Tout à pied jusqu'à Caminito.</p>
         </div>
       </li>
-        <li class="activity logistics">
-        <div class="activity-time">17h15</div>
-        <div class="activity-title">Temps libre <span class="duration">(1h45)</span></div>
-      </li>
         <li class="activity">
-        <div class="activity-time">19h00</div>
+        <div class="activity-time">20h00</div>
         <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
         <div>
           <div class="activity-title">Dîner <span class="duration">(1h30)</span></div>
-          <p class="activity-desc">Cervecería ou bar à tapas dans l'Eixample — l'heure du <b>vermut</b> (vermouth catalan, servi avec olives et anchois) avant de passer aux tapas. Le quartier en est plein entre le Passeig de Gràcia et l'hôtel.</p>
+          <p class="activity-desc"><b>Caminito</b> — restaurant argentin.</p>
         </div>
       </li>
-        <li class="activity">
-        <div class="activity-time">21h00</div>
-        <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
-        <div>
-          <div class="activity-title">Retour à l'hôtel</div>
-        </div>
+        <li class="activity logistics">
+        <div class="activity-time">21h30</div>
+        <div class="activity-title">Retour à l'hôtel</div>
       </li>
       </ul>
     </div>
     <div class="day">
       <div class="day-date">19 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-route">🚗 En route → Valence (départ 12h30)</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">8h30</div>
         <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
         <div>
           <div class="activity-title">Petit-déjeuner <span class="duration">(30 min)</span></div>
-          <p class="activity-desc">Café rapide + <b>pa amb tomàquet</b> au bar — journée de départ, garder du temps pour le Parc de la Ciutadella avant la route.</p>
+          <p class="activity-desc">Café rapide + <b>pa amb tomàquet</b> au bar — journée de départ, puis Cosmo Caixa avant la route.</p>
         </div>
       </li>
         <li class="activity">
-        <div class="activity-time">9h30</div>
+        <div class="activity-time">10h00</div>
         <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 8 9h2.5L7 15h3v6h4v-6h3l-3.5-6H17z" fill="currentColor" stroke="none"/></svg></div>
         <div>
-          <div class="activity-title">Parc de la Ciutadella <span class="duration">(1h)</span></div>
-          <p class="activity-desc">Grand parc central avec une cascade monumentale et un lac à barques — bonne dernière balade avant de reprendre la route. <span class="kid-tip">Un mammouth de pierre grandeur nature se cache près de l'entrée du zoo, dans le parc — facile à repérer et toujours un succès auprès des enfants.</span> <span class="travel-note">🧭 Depuis l'hôtel : ~25-30 min à pied, ~12-15 min en métro ou Uber/taxi.</span></p>
+          <div class="activity-title">Cosmo Caixa <span class="duration">(1h30)</span></div>
+          <p class="activity-desc">Musée des sciences interactif — forêt tropicale grandeur nature, bien climatisé. <span class="kid-tip">La forêt tropicale avec de vrais arbres et animaux fascine les filles.</span> <span class="travel-note">🧭 ~20-25 min en Uber/taxi depuis l'hôtel. Ouvre à 10h00.</span> <span class="kid-tip">🎟️ Billets sur place — Adultes : 8€/pers · Cléophée &amp; Othilie : gratuit. Total : ~16€.</span> ⚠️ Timing serré : prévoir de repartir à 11h30 max pour le check-out.</p>
         </div>
       </li>
         <li class="activity logistics">
-        <div class="activity-time">10h30</div>
-        <div class="activity-title">Temps libre <span class="duration">(1h)</span></div>
+        <div class="activity-time">11h30</div>
+        <div class="activity-title">Taxi retour hôtel <span class="duration">(~25 min)</span></div>
       </li>
         <li class="activity">
-        <div class="activity-time">11h30</div>
+        <div class="activity-time">12h00</div>
         <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div>
         <div>
           <div class="activity-title">Check-out hôtel <span style="color:var(--moss);font-size:12.5px;font-weight:600;">(limite : 12h00)</span></div>
@@ -1121,11 +1095,6 @@
 
     <div class="day">
       <div class="day-date">19 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-hotel">🚗 À l'hôtel</span>
-        <span class="kit-badge non">🛴 Non (arrivée)</span>
-        <span class="kit-badge oui">🚼 Oui</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">16h00</div>
@@ -1144,15 +1113,21 @@
         <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="6" r="2.3"/><path d="M3 15c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/><path d="M3 19.5c1.4-1.3 2.8-1.3 4.2 0s2.8 1.3 4.2 0 2.8-1.3 4.2 0 2.8 1.3 4.2 0"/></svg></div>
         <div>
           <div class="activity-title">Playa de la Malvarrosa <span class="duration">(1h30)</span></div>
-          <p class="activity-desc">La plage de la ville, large promenade bordée de restaurants à paella — bon premier bain après la route. <span class="travel-note">🧭 Depuis l'hôtel : pas vraiment à pied (~35-40 min), métro direct ~15-20 min, Uber/taxi ~10 min.</span></p>
+          <p class="activity-desc">La plage de la ville, large promenade bordée de restaurants à paella — bon premier bain après la route. Taxi depuis l'hôtel (~10 min). Dîner directement sur place à La Pepica.</p>
         </div>
       </li>
         <li class="activity">
         <div class="activity-time">19h00</div>
         <div class="activity-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></div>
         <div>
-          <div class="activity-title">Dîner <span class="duration">(1h30)</span></div>
-          <p class="activity-desc"><b>La Pepica</b> <span class="tag propose">à valider</span> (paella valenciana, fruits de mer) — institution centenaire face à la plage, a même reçu la famille royale d'Espagne.</p>
+          <div class="activity-title">Dîner <span class="duration">(1h30)</span> — options à choisir</div>
+          <p class="activity-desc">4 adresses sur ou près de Malvarrosa :</p>
+          <ul style="margin:6px 0 0 0;padding-left:18px;font-size:14px;line-height:1.7;">
+            <li><b>El Trompo</b> — directement sur le Paseo Marítimo · 4,4/5 (15 000 avis) · 20-30€ · cuisine méditerranéenne, très couru des locaux</li>
+            <li><b>Haus Playa</b> — Passeig de Neptú, face à la mer · 4,6/5 (3 300 avis) · 20-30€ · ambiance moderne, vue mer</li>
+            <li><b>Casa Montaña</b> — dans le Cabanyal (5 min de la plage) · 4,6/5 (6 100 avis) · bar à tapas historique fondé en 1836, cave à vins, très ancré local</li>
+            <li><b>La Pepica</b> — Passeig de Neptú 6, face à la plage · institution centenaire (Hemingway y venait) · plus touristique mais iconique</li>
+          </ul>
         </div>
       </li>
         <li class="activity">
@@ -1166,11 +1141,6 @@
     </div>
     <div class="day">
       <div class="day-date">20 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-hotel">🚗 À l'hôtel</span>
-        <span class="kit-badge oui">🛴 Turia + Gulliver le matin (A/R hôtel)</span>
-        <span class="kit-badge oui">🚼 Bioparc l'après-midi</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">9h00</div>
@@ -1267,11 +1237,6 @@
     </div>
     <div class="day">
       <div class="day-date">21 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-hotel">🚗 À l'hôtel · Uber Cité des Arts</span>
-        <span class="kit-badge non">🛴 Non (intérieur aquarium)</span>
-        <span class="kit-badge oui">🚼 Oui</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">9h00</div>
@@ -1332,9 +1297,6 @@
     </div>
     <div class="day">
       <div class="day-date">22 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-route">🚗 En route → Séville (départ 4h du matin)</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">03h30</div>
@@ -1411,11 +1373,6 @@
 
     <div class="day">
       <div class="day-date">22 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-hotel">🚗 À l'hôtel</span>
-        <span class="kit-badge non">🛴 Non (vieux Séville)</span>
-        <span class="kit-badge oui">🚼 Oui</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">12h00</div>
@@ -1480,11 +1437,6 @@
     </div>
     <div class="day">
       <div class="day-date">23 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-hotel">🚗 À l'hôtel</span>
-        <span class="kit-badge non">🛴 Non (vieux Séville)</span>
-        <span class="kit-badge oui">🚼 Oui</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">8h00</div>
@@ -1549,11 +1501,6 @@
     </div>
     <div class="day">
       <div class="day-date">24 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-hotel">🚗 À l'hôtel le matin · En route → Cadix l'après-midi</span>
-        <span class="kit-badge non">🛴 Non</span>
-        <span class="kit-badge oui">🚼 Oui (matin)</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">8h00</div>
@@ -1664,11 +1611,6 @@
 
     <div class="day">
       <div class="day-date">24 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-route">🚗 À prendre (wecamp = voiture obligatoire)</span>
-        <span class="kit-badge non">🛴 Non (arrivée)</span>
-        <span class="kit-badge oui">🚼 Oui</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">16h00</div>
@@ -1702,11 +1644,6 @@
     </div>
     <div class="day">
       <div class="day-date">25 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-route">🚗 À prendre (wecamp → Cadix, 15 min)</span>
-        <span class="kit-badge oui">🛴 Oui — promenades bord de mer (A/R depuis parking)</span>
-        <span class="kit-badge non">🚼 Non (pas les deux)</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">9h00</div>
@@ -1776,9 +1713,6 @@
     </div>
     <div class="day">
       <div class="day-date">26 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-route">🚗 En route → Alvor</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">9h00</div>
@@ -1851,11 +1785,6 @@
 
     <div class="day">
       <div class="day-date">26 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-route">🚗 À prendre (Algarve)</span>
-        <span class="kit-badge non">🛴 Non (arrivée)</span>
-        <span class="kit-badge oui">🚼 Oui</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">16h00</div>
@@ -1900,11 +1829,6 @@
     </div>
     <div class="day">
       <div class="day-date">27 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-route">🚗 À prendre</span>
-        <span class="kit-badge oui">🛴 Promenade village matin (A/R)</span>
-        <span class="kit-badge oui">🚼 Plage l'après-midi (sable = pas de trottinettes)</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">8h30</div>
@@ -1991,9 +1915,6 @@
     </div>
     <div class="day">
       <div class="day-date">28 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-route">🚗 En route → Albufeira</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">9h00</div>
@@ -2055,11 +1976,6 @@
 
     <div class="day">
       <div class="day-date">—</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-route">🚗 À prendre (Algarve)</span>
-        <span class="kit-badge non">🛴 À définir</span>
-        <span class="kit-badge oui">🚼 Oui</span>
-      </div>
       <ul class="day-items">
         <li class="activity logistics tbd">
         <div class="activity-time">à définir</div>
@@ -2167,9 +2083,6 @@
 
     <div class="day">
       <div class="day-date">31 août</div>
-      <div class="kit-jour">
-        <span class="kit-badge car-route">🚗 En route → Lisbonne (déménagement)</span>
-      </div>
       <ul class="day-items">
         <li class="activity">
         <div class="activity-time">15h00</div>
